@@ -1,5 +1,6 @@
-http://fyupeng.github.io/repository/index.html
+http://fyupeng.github.io/2022/06/22/hello-world/
 http://fyupeng.github.io/tags/index.html
+http://fyupeng.github.io/repository/index.html
 http://fyupeng.github.io/links/index.html
 http://fyupeng.github.io/categories/index.html
 http://fyupeng.github.io/books/index.html
@@ -8,5 +9,9 @@ http://fyupeng.github.io/404.html
 http://fyupeng.github.io/fonts/README.html
 http://fyupeng.github.io/2022/06/24/juc/
 http://fyupeng.github.io/2022/06/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/
-http://fyupeng.github.io/2022/06/22/hello-world/
 http://fyupeng.github.io/
+http://fyupeng.github.io/tags/jQuery/
+http://fyupeng.github.io/tags/%E8%A1%A8%E6%A0%BC/
+http://fyupeng.github.io/tags/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/
+http://fyupeng.github.io/categories/web-%E5%89%8D%E7%AB%AF/
+http://fyupeng.github.io/categories/web-%E5%89%8D%E7%AB%AF/web-%E5%90%8E%E7%AB%AF/
