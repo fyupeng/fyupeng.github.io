@@ -23,7 +23,7 @@
 <meta property="og:url" content="http://fyupeng.github.io/tags/MySQL/index.html">
 <meta property="og:site_name" content="fyupeng">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="fyupeng">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
   <link rel="canonical" href="http://fyupeng.github.io/tags/MySQL/index.html">
@@ -38,6 +38,8 @@
 
   
   
+  
+    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
   
   
 <meta name="generator" content="Hexo 5.4.2"></head>
@@ -353,11 +355,11 @@
           
           <li><a href="/tags/MySQL、数据库/">MySQL、数据库</a></li>
           
+          <li><a href="/tags/jvm/">jvm</a></li>
+          
           <li><a href="/tags/MySQL/">MySQL</a></li>
           
           <li><a href="/tags/配置/">配置</a></li>
-          
-          <li><a href="/tags/jvm/">jvm</a></li>
           
           <li><a href="/tags/netty/">netty</a></li>
           
@@ -367,9 +369,9 @@
           
           <li><a href="/tags/Spring/">Spring</a></li>
           
-          <li><a href="/tags/数据库、Redis/">数据库、Redis</a></li>
-          
           <li><a href="/tags/二分查找/">二分查找</a></li>
+          
+          <li><a href="/tags/数据库、Redis/">数据库、Redis</a></li>
           
           <li><a href="/tags/二叉树/">二叉树</a></li>
           
@@ -431,11 +433,16 @@
         
     </ul>
 
+	
+		
+	</div>
     <div class="copyright">
     	
+        &copy; 2022 fyupeng
+        
         <div class="publishby">
-        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
-        </div>
+        	Theme by <a href="https://github.com/fyupeng" target="_blank"> fyupeng </a>base on <a href="https://github.com/fyupeng/hexo-theme-pure" target="_blank">pure</a>.
+        </div>	
     </div>
 </footer>
   <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
@@ -474,6 +481,35 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
+  <script>
+  //利用 FancyBox 实现点击图片放大
+  $(document).ready(function() {
+    $('article img').not('[hidden]').not('.panel-body img').each(function() {
+      var $image = $(this);
+      var imageCaption = $image.attr('alt');
+      var $imageWrapLink = $image.parent('a');
+      if ($imageWrapLink.length < 1) {
+        var src = this.getAttribute('src');
+        var idx = src.lastIndexOf('?');
+        if (idx != -1) {
+          src = src.substring(0, idx);
+        }
+        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
+      }
+      $imageWrapLink.attr('data-fancybox', 'images');
+      if (imageCaption) {
+        $imageWrapLink.attr('data-caption', imageCaption);
+      }
+    });
+    $().fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+    });
+  });
+  </script>
 
 
 
