@@ -41,8 +41,6 @@
   
   
   
-    <link href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.css" rel="stylesheet">
-  
   
 <meta name="generator" content="Hexo 5.4.2"></head>
 
@@ -353,9 +351,9 @@
           
           <li><a href="/categories/Java框架/">Java框架</a></li>
           
-          <li><a href="/categories/java框架/">java框架</a></li>
-          
           <li><a href="/categories/leetCode算法/">leetCode算法</a></li>
+          
+          <li><a href="/categories/java框架/">java框架</a></li>
           
         </ul>
       </nav>
@@ -492,33 +490,6 @@
       <div class="panel panel-default b-no">
         <div class="panel-heading" role="tab">
           <h3 class="panel-title">
-            <a data-toggle="collapse" href="#collapsejava框架" aria-expanded="true">
-              <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>
-              java框架
-            </a>
-            <small class="text-muted">(Total 1 articles)</small>
-          </h3>
-        </div>
-        <div id="collapsejava框架" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingjava框架">
-          <div class="panel-body">
-            <div class="collection">
-              
-                
-<a href="/2022/06/26/Spring/" class="collection-item"   itemprop="url">
-  <time datetime="2022-06-26T15:29:33.000Z" itemprop="datePublished">2022-06-26</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> Spring
-</a>
-
-
-              
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="panel panel-default b-no">
-        <div class="panel-heading" role="tab">
-          <h3 class="panel-title">
             <a data-toggle="collapse" href="#collapseleetCode算法" aria-expanded="true">
               <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>
               leetCode算法
@@ -539,14 +510,6 @@
 
               
                 
-<a href="/2022/06/25/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="collection-item"   itemprop="url">
-  <time datetime="2022-06-25T06:45:14.000Z" itemprop="datePublished">2022-06-25</time>
-  <span>&nbsp;&nbsp;&nbsp;</span> 二叉树
-</a>
-
-
-              
-                
 <a href="/2022/06/25/%E5%9B%9E%E6%BA%AF/" class="collection-item"   itemprop="url">
   <time datetime="2022-06-25T06:45:06.000Z" itemprop="datePublished">2022-06-25</time>
   <span>&nbsp;&nbsp;&nbsp;</span> 回溯
@@ -555,9 +518,44 @@
 
               
                 
+<a href="/2022/06/25/%E4%BA%8C%E5%8F%89%E6%A0%91/" class="collection-item"   itemprop="url">
+  <time datetime="2022-06-25T06:45:14.000Z" itemprop="datePublished">2022-06-25</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> 二叉树
+</a>
+
+
+              
+                
 <a href="/2022/06/25/%E9%93%BE%E8%A1%A8/" class="collection-item"   itemprop="url">
   <time datetime="2022-06-25T06:44:53.000Z" itemprop="datePublished">2022-06-25</time>
   <span>&nbsp;&nbsp;&nbsp;</span> 链表
+</a>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="panel panel-default b-no">
+        <div class="panel-heading" role="tab">
+          <h3 class="panel-title">
+            <a data-toggle="collapse" href="#collapsejava框架" aria-expanded="true">
+              <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>
+              java框架
+            </a>
+            <small class="text-muted">(Total 1 articles)</small>
+          </h3>
+        </div>
+        <div id="collapsejava框架" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingjava框架">
+          <div class="panel-body">
+            <div class="collection">
+              
+                
+<a href="/2022/06/26/Spring/" class="collection-item"   itemprop="url">
+  <time datetime="2022-06-26T15:29:33.000Z" itemprop="datePublished">2022-06-26</time>
+  <span>&nbsp;&nbsp;&nbsp;</span> Spring
 </a>
 
 
@@ -631,35 +629,6 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
-
-  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.3.5/dist/jquery.fancybox.min.js"></script>
-  <script>
-  //利用 FancyBox 实现点击图片放大
-  $(document).ready(function() {
-    $('article img').not('[hidden]').not('.panel-body img').each(function() {
-      var $image = $(this);
-      var imageCaption = $image.attr('alt');
-      var $imageWrapLink = $image.parent('a');
-      if ($imageWrapLink.length < 1) {
-        var src = this.getAttribute('src');
-        var idx = src.lastIndexOf('?');
-        if (idx != -1) {
-          src = src.substring(0, idx);
-        }
-        $imageWrapLink = $image.wrap('<a href="' + src + '"></a>').parent('a');
-      }
-      $imageWrapLink.attr('data-fancybox', 'images');
-      if (imageCaption) {
-        $imageWrapLink.attr('data-caption', imageCaption);
-      }
-    });
-    $().fancybox({
-      selector: '[data-fancybox="images"]',
-      hash: false,
-      loop: false,
-    });
-  });
-  </script>
 
 
 
