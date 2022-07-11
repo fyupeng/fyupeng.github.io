@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://fyupeng.github.io/2022/07/11/SpringMVC/</loc>
+    <lastmod>2022-07-11</lastmod>
+  </url>
+  <url>
     <loc>http://fyupeng.github.io/2022/07/01/Spring/</loc>
     <lastmod>2022-07-01</lastmod>
   </url>
