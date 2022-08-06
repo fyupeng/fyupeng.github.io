@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://fyupeng.github.io/books/index.html</loc>
+    
+    <lastmod>2022-08-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://fyupeng.github.io/about/index.html</loc>
+    
+    <lastmod>2022-08-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://fyupeng.github.io/2022/08/06/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/</loc>
     
     <lastmod>2022-08-06</lastmod>
@@ -50,15 +68,6 @@
     <loc>http://fyupeng.github.io/2022/06/30/%E9%9D%A2%E8%AF%952/</loc>
     
     <lastmod>2022-06-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://fyupeng.github.io/about/index.html</loc>
-    
-    <lastmod>2022-06-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -236,15 +245,6 @@
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/books/index.html</loc>
-    
-    <lastmod>2022-06-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://fyupeng.github.io/404.html</loc>
     
     <lastmod>2022-06-24</lastmod>
@@ -272,14 +272,14 @@
 
   
   <url>
-    <loc>http://fyupeng.github.io/tags/JDBC/</loc>
+    <loc>http://fyupeng.github.io/tags/Java%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/Java%E5%8E%9F%E7%90%86/</loc>
+    <loc>http://fyupeng.github.io/tags/JDBC/</loc>
     <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -300,20 +300,6 @@
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/MySQL/</loc>
-    <lastmod>2022-08-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://fyupeng.github.io/tags/%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2022-08-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://fyupeng.github.io/tags/MySQL%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -328,7 +314,14 @@
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/juc/</loc>
+    <loc>http://fyupeng.github.io/tags/MySQL/</loc>
+    <lastmod>2022-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://fyupeng.github.io/tags/%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -342,6 +335,13 @@
   </url>
   
   <url>
+    <loc>http://fyupeng.github.io/tags/juc/</loc>
+    <lastmod>2022-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://fyupeng.github.io/tags/Oracle/</loc>
     <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -349,14 +349,14 @@
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/Spring/</loc>
+    <loc>http://fyupeng.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/</loc>
     <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/</loc>
+    <loc>http://fyupeng.github.io/tags/Spring/</loc>
     <lastmod>2022-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
