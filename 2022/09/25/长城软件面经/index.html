@@ -26,7 +26,7 @@
 <meta property="og:description" content="简单三分钟自我介绍自我介绍这里一笔带过，给对面介绍自己内在 + 外在 + 校园经历 + 校园项目  + 意向岗位 技术面1. Java基础篇1.1 说一说数据结构说下链表的属性，指针属性 树结构了解过吗？ 叶子节点怎么存储的？ 2. Spring 篇2.1 Spring MVC 的原理主要有5个组件，前端控制器、映射器、处理器、处理器适配器、视图解析器  前端控制器也就是中央处理器，它主要负责前端">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-25T10:28:40.000Z">
-<meta property="article:modified_time" content="2022-09-25T10:30:50.944Z">
+<meta property="article:modified_time" content="2022-09-25T15:23:04.149Z">
 <meta property="article:author" content="fyupeng">
 <meta property="article:tag" content="Java面经">
 <meta name="twitter:card" content="summary">
@@ -397,10 +397,10 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/25/%E9%95%BF%E5%9F%8E%E8%BD%AF%E4%BB%B6%E9%9D%A2%E7%BB%8F/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.3k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.5k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 7(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 8(分)</span>
 	
 
       </div>
@@ -439,9 +439,14 @@
 </ul>
 <h4 id="3-JVM-篇"><a href="#3-JVM-篇" class="headerlink" title="3. JVM 篇"></a>3. JVM 篇</h4><h5 id="3-1-说一说你对jvm内存结构的理解"><a href="#3-1-说一说你对jvm内存结构的理解" class="headerlink" title="3.1 说一说你对jvm内存结构的理解"></a>3.1 说一说你对jvm内存结构的理解</h5><p>jvm 内存模型由程序计数器、方法区、虚拟机栈、本地方法栈、堆和运行常量池组成。</p>
 <p>方法区：主要是存储类变量，静态变量，常量以及<code>class</code>描述信息（会在类加载后加载到方法区中）</p>
+<p>虚拟机栈：虚拟机栈跟线程是直接挂钩的，它的生命周期跟线程一样，而且虚拟机栈设置的大小（<code>-Xss1024k</code>，1024个字节1M单词缩写Stack Size），当设置过大时，在堆大小固定的情况下，总内存 = 堆内存 + 线程数 * 虚拟机栈大小，可线程数就会相应减少；</p>
+<p>本地方法栈：跟虚拟机栈相似，不过不是用Java写的；</p>
+<p>程序计数器：线程私有，每个线程在让出CPU会由它来记录当前位置，以便恢复CPU还在原位置执行；</p>
+<p>堆：存放Java对象实例，在JDK7版本中，由新生代（Eden区、Survivor区）和 老年代组成，也是GC垃圾收集器处理的主要区域，俗称GC堆，是管理内存中最大的一块；</p>
+<p>运行时常量池是放在方法区中的，作为方法区的一部分。</p>
 <h5 id="3-2-对象创建和销毁的过程"><a href="#3-2-对象创建和销毁的过程" class="headerlink" title="3.2 对象创建和销毁的过程"></a>3.2 对象创建和销毁的过程</h5><p>对象创建的过程其实在 <code>jvm</code> 中包括了加载、链接（包含验证（虚拟机的安全性、对象头、父类与子类中<code>final</code>等声明的安全性校验等等）、准备、解析）、初始化；</p>
 <p>准备阶段：申请内存空间并完成默认的初始化，比如int类型默认初始化为4个字节的内存空间，并初始化为0；</p>
-<p>解析阶段：将常量池中的引用解析为直接引用，也就是将类中的常量池放到了运行池常量池中，并完成</p>
+<p>解析阶段：将常量池中的引用解析为直接引用，也就是将类中的常量池放到了运行时常量池中，这样我们在直接调用方法或者引用类的时候，是需要符号引用的，只不过<code>jvm</code>帮我们自动引用了常量中的符号，就成直接引用。</p>
 <p>初始化阶段：用户真正的赋值操作，即调用相应的构造器构造对象，构造对象创建的时候，如果是比较复杂的，由于虚拟机优化机制，会出现指令重排序问题，什么问题？</p>
 <p>在该场景中，构造过程分为几个步骤：申请内存 -&gt; 构造块构造 -&gt; 内存地址返回，这里面的指令为了性能上的提示，而不改变结果，jvm可能会将内存地址也就是构造函数创建的对象指向的内存地址放到构造块过程中返回，而没有等到最后。</p>
 <p>引用：编译器可以自由地以优化的名义对指令的顺序进行随意处理。</p>
