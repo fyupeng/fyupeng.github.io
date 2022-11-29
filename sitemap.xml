@@ -361,6 +361,20 @@
   </url>
   
   <url>
+    <loc>http://fyupeng.github.io/tags/jvm/</loc>
+    <lastmod>2022-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://fyupeng.github.io/tags/juc/</loc>
+    <lastmod>2022-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://fyupeng.github.io/tags/MySQL/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -375,21 +389,7 @@
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/jvm/</loc>
-    <lastmod>2022-11-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://fyupeng.github.io/tags/netty/</loc>
-    <lastmod>2022-11-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://fyupeng.github.io/tags/juc/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -424,14 +424,14 @@
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/MVC/</loc>
+    <loc>http://fyupeng.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</loc>
+    <loc>http://fyupeng.github.io/tags/MVC/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
