@@ -361,6 +361,13 @@
   </url>
   
   <url>
+    <loc>http://fyupeng.github.io/tags/jvm/</loc>
+    <lastmod>2022-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://fyupeng.github.io/tags/MySQL/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -369,13 +376,6 @@
   
   <url>
     <loc>http://fyupeng.github.io/tags/%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2022-11-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://fyupeng.github.io/tags/jvm/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -403,6 +403,13 @@
   </url>
   
   <url>
+    <loc>http://fyupeng.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/</loc>
+    <lastmod>2022-11-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://fyupeng.github.io/tags/Spring/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -411,13 +418,6 @@
   
   <url>
     <loc>http://fyupeng.github.io/tags/RPC/</loc>
-    <lastmod>2022-11-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://fyupeng.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
