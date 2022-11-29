@@ -382,14 +382,14 @@
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/juc/</loc>
+    <loc>http://fyupeng.github.io/tags/netty/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/netty/</loc>
+    <loc>http://fyupeng.github.io/tags/juc/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -403,14 +403,14 @@
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/Spring/</loc>
+    <loc>http://fyupeng.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/</loc>
+    <loc>http://fyupeng.github.io/tags/Spring/</loc>
     <lastmod>2022-11-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
