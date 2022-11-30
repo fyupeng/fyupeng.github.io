@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>MongoDB | fyupeng</title>
+  <meta name="description" content="一、简介简介：MongoDB是一种NOSQL（Not Only Sql）数据库 数据表 -&gt;JDBC读取-&gt;POJO（VO、PO）-&gt;控制层转化为JSON数据-&gt;客户端    No 关系型数据库 非关系型数据库    1 数据库 数据库（类似于MySQL）   2 表 集合   3 行 文档   4 列 成员   5 主键 Object ID（自动维护）   在整个行业之中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB">
+<meta property="og:url" content="http://fyupeng.github.io/2022/06/25/MongoDB/index.html">
+<meta property="og:site_name" content="fyupeng">
+<meta property="og:description" content="一、简介简介：MongoDB是一种NOSQL（Not Only Sql）数据库 数据表 -&gt;JDBC读取-&gt;POJO（VO、PO）-&gt;控制层转化为JSON数据-&gt;客户端    No 关系型数据库 非关系型数据库    1 数据库 数据库（类似于MySQL）   2 表 集合   3 行 文档   4 列 成员   5 主键 Object ID（自动维护）   在整个行业之中">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yupeng-tuchuang.oss-cn-shenzhen.aliyuncs.com/fd9924f3-cd1a-4087-8515-6cce5ee289e6.png">
+<meta property="article:published_time" content="2022-06-25T07:50:51.000Z">
+<meta property="article:modified_time" content="2022-06-25T07:54:19.810Z">
+<meta property="article:author" content="fyupeng">
+<meta property="article:tag" content="MongoDB">
+<meta property="article:tag" content="数据库">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yupeng-tuchuang.oss-cn-shenzhen.aliyuncs.com/fd9924f3-cd1a-4087-8515-6cce5ee289e6.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://fyupeng.github.io/2022/06/25/MongoDB/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="fyupeng" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/fyupeng" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">fyupeng</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java 后端开发</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 广州, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies">
+            
+            <i class="icon icon-eye"></i>
+            
+            <span class="menu-title">电影</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/fyupeng" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/fyupeng" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E6%A1%86%E6%9E%B6/">Java框架</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E7%AC%94%E8%AE%B0/">Java笔记</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetCode%E7%AE%97%E6%B3%95/">leetCode算法</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%8E%9F%E7%90%86/" rel="tag">Java原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%9D%A2%E7%BB%8F/" rel="tag">Java面经</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">MySQL、数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RPC/" rel="tag">RPC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/" rel="tag">jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/netty/" rel="tag">netty</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%9E%E6%BA%AF/" rel="tag">回溯</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/" rel="tag">数据库、Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" rel="tag">贪心算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE/" rel="tag">配置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag">链表</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/JDBC/" style="font-size: 13px;">JDBC</a> <a href="/tags/Java%E5%8E%9F%E7%90%86/" style="font-size: 13.33px;">Java原理</a> <a href="/tags/Java%E9%9D%A2%E7%BB%8F/" style="font-size: 14px;">Java面经</a> <a href="/tags/MVC/" style="font-size: 13px;">MVC</a> <a href="/tags/MongoDB/" style="font-size: 13px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 13px;">MySQL</a> <a href="/tags/MySQL%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">MySQL、数据库</a> <a href="/tags/Oracle/" style="font-size: 13px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 13px;">RPC</a> <a href="/tags/Spring/" style="font-size: 13.33px;">Spring</a> <a href="/tags/juc/" style="font-size: 13px;">juc</a> <a href="/tags/jvm/" style="font-size: 13px;">jvm</a> <a href="/tags/netty/" style="font-size: 13.67px;">netty</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 13px;">二分查找</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 13px;">二叉树</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 13px;">回溯</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.67px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/" style="font-size: 13px;">数据库、Redis</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 13px;">贪心算法</a> <a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 13px;">配置</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 13px;">链表</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">15</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/29/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/" class="title">腾讯一面</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-29T13:08:12.000Z" itemprop="datePublished">2022-11-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Java%E7%AC%94%E8%AE%B0/">Java笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/20/SpringBoot%E6%95%B4%E5%90%88rpc-netty-framework/" class="title">SpringBoot整合rpc-netty-framework</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-20T09:15:08.000Z" itemprop="datePublished">2022-10-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/29/%E5%B0%8F%E8%BF%88%E7%A7%91%E6%8A%80%E4%B8%80%E9%9D%A2/" class="title">小迈科技一面</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-29T08:00:20.000Z" itemprop="datePublished">2022-09-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/25/%E5%8F%B3%E5%B2%B8%E7%89%A9%E8%81%94%E9%9D%A2%E7%BB%8F/" class="title">右岸物联面经</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-25T10:28:50.000Z" itemprop="datePublished">2022-09-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/25/%E9%95%BF%E5%9F%8E%E8%BD%AF%E4%BB%B6%E9%9D%A2%E7%BB%8F/" class="title">长城软件面经</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-25T10:28:40.000Z" itemprop="datePublished">2022-09-25</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">一、简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">简介：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%9A%E5%8A%A1%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">业务应用场景：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">二、安装与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows"><span class="toc-number">2.1.</span> <span class="toc-text">windows</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux"><span class="toc-number">2.2.</span> <span class="toc-text">Linux</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%88%A0%E9%99%A4"><span class="toc-number">3.</span> <span class="toc-text">三、数据库的创建与删除</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%9B%86%E5%90%88%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">四、集合操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%96%87%E6%A1%A3%E6%93%8D%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text">五、文档操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">插入：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%EF%BC%9A"><span class="toc-number">5.2.</span> <span class="toc-text">查询：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%EF%BC%9A"><span class="toc-number">5.3.</span> <span class="toc-text">更新：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%EF%BC%9A"><span class="toc-number">5.4.</span> <span class="toc-text">删除：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E6%96%87%E6%A1%A3%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="toc-number">6.</span> <span class="toc-text">六、文档分页查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%9F%A5%E8%AF%A2%EF%BC%9A"><span class="toc-number">6.1.</span> <span class="toc-text">统计查询：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%A1%B5%E5%88%97%E8%A1%A8%E6%9F%A5%E8%AF%A2%EF%BC%9A"><span class="toc-number">6.2.</span> <span class="toc-text">分页列表查询：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2%EF%BC%9A"><span class="toc-number">6.3.</span> <span class="toc-text">排序查询：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%96%87%E6%A1%A3%E7%9A%84%E6%9B%B4%E5%A4%9A%E6%9F%A5%E8%AF%A2"><span class="toc-number">7.</span> <span class="toc-text">七、文档的更多查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%A4%8D%E6%9D%82%E6%9F%A5%E8%AF%A2%EF%BC%9A"><span class="toc-number">7.1.</span> <span class="toc-text">模糊查询&#x2F;正则表达式复杂查询：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%9F%A5%E8%AF%A2%EF%BC%9A"><span class="toc-number">7.2.</span> <span class="toc-text">比较查询：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2%EF%BC%9A"><span class="toc-number">7.3.</span> <span class="toc-text">条件查询：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%E3%80%81%E7%B4%A2%E5%BC%95%E7%AE%A1%E7%90%86%E6%93%8D%E4%BD%9C"><span class="toc-number">8.</span> <span class="toc-text">八、索引管理操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="toc-number">8.1.</span> <span class="toc-text">创建索引:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E7%B4%A2%E5%BC%95%EF%BC%9A"><span class="toc-number">8.2.</span> <span class="toc-text">获取索引：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E7%B4%A2%E5%BC%95%EF%BC%9A"><span class="toc-number">8.3.</span> <span class="toc-text">移除索引：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B9%9D%E3%80%81%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">9.</span> <span class="toc-text">九、索引的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E8%AE%A1%E5%88%92%EF%BC%9A"><span class="toc-number">9.1.</span> <span class="toc-text">执行计划：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%B5%E7%9B%96%E7%9A%84%E6%9F%A5%E8%AF%A2%EF%BC%9A"><span class="toc-number">9.2.</span> <span class="toc-text">涵盖的查询：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E3%80%81findBy%E5%B1%9E%E6%80%A7%E5%AD%97%E6%AE%B5%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"><span class="toc-number">10.</span> <span class="toc-text">十、findBy属性字段分页查询</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dao%E6%8E%A5%E5%8F%A3%EF%BC%9A"><span class="toc-number">10.1.</span> <span class="toc-text">dao接口：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#service%E5%AE%9E%E7%8E%B0%EF%BC%9A"><span class="toc-number">10.2.</span> <span class="toc-text">service实现：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#page%E7%9A%84%E7%B4%A2%E5%BC%95%E4%BB%8E0%E5%BC%80%E5%A7%8B%EF%BC%8Csize%E6%98%AF%E9%A1%B5%E9%9D%A2%E5%A4%A7%E5%B0%8F"><span class="toc-number">10.3.</span> <span class="toc-text">page的索引从0开始，size是页面大小</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81mongoTemplate%E5%AE%9E%E7%8E%B0%E7%82%B9%E8%B5%9E"><span class="toc-number">11.</span> <span class="toc-text">十一、mongoTemplate实现点赞</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E5%89%AF%E6%9C%AC%E9%9B%86"><span class="toc-number">12.</span> <span class="toc-text">十二、副本集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%AF%E6%9C%AC%E9%9B%86%E4%B8%89%E4%B8%AA%E8%A7%92%E8%89%B2%EF%BC%9A"><span class="toc-number">12.1.</span> <span class="toc-text">副本集三个角色：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%AF%E6%9C%AC%E9%9B%86%E7%9A%84%E5%88%9B%E5%BB%BA%EF%BC%9A"><span class="toc-number">12.2.</span> <span class="toc-text">副本集的创建：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%8A%82%E7%82%B9%EF%BC%9A"><span class="toc-number">12.3.</span> <span class="toc-text">主节点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%AF%E6%9C%AC%E8%8A%82%E7%82%B9%EF%BC%9A"><span class="toc-number">12.4.</span> <span class="toc-text">副本节点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%B2%E8%A3%81%E8%8A%82%E7%82%B9%EF%BC%9A"><span class="toc-number">12.5.</span> <span class="toc-text">仲裁节点：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%89%AF%E6%9C%AC%E9%9B%86%EF%BC%9A"><span class="toc-number">13.</span> <span class="toc-text">初始化副本集：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%89%AF%E6%9C%AC%E4%BB%8E%E8%8A%82%E7%82%B9%EF%BC%9A"><span class="toc-number">14.</span> <span class="toc-text">添加副本从节点：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%BB%B2%E8%A3%81%E8%8A%82%E7%82%B9%EF%BC%9A"><span class="toc-number">15.</span> <span class="toc-text">添加仲裁节点：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="toc-number">16.</span> <span class="toc-text">读写操作：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E8%8A%82%E7%82%B9%E9%80%89%E4%B8%BE%E5%8E%9F%E5%88%99%EF%BC%9A"><span class="toc-number">17.</span> <span class="toc-text">主节点选举原则：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%81%E4%B8%89%E3%80%81%E7%94%A8%E6%88%B7%E8%A7%92%E8%89%B2%E6%9D%83%E9%99%90"><span class="toc-number">18.</span> <span class="toc-text">十三、用户角色权限</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-MongoDB" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MongoDB
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/06/25/MongoDB/" class="article-date">
+	  <time datetime="2022-06-25T07:50:51.000Z" itemprop="datePublished">2022-06-25</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/Java%E7%AC%94%E8%AE%B0/">Java笔记</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/MongoDB/" rel="tag">MongoDB</a>, <a class="article-tag-link-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/06/25/MongoDB/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 3.8k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 17(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h1><h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p>MongoDB是一种NOSQL（Not Only Sql）数据库</p>
+<p>数据表 -&gt;JDBC读取-&gt;POJO（VO、PO）-&gt;控制层转化为JSON数据-&gt;客户端</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>关系型数据库</th>
+<th>非关系型数据库</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>数据库</td>
+<td>数据库（类似于MySQL）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>表</td>
+<td>集合</td>
+</tr>
+<tr>
+<td>3</td>
+<td>行</td>
+<td>文档</td>
+</tr>
+<tr>
+<td>4</td>
+<td>列</td>
+<td>成员</td>
+</tr>
+<tr>
+<td>5</td>
+<td>主键</td>
+<td>Object ID（自动维护）</td>
+</tr>
+</tbody></table>
+<p>在整个行业之中，MongoDB数据库是发展最好的一个NoSQL数据库，因为它与Node.JS捆绑在一起了，也就是如果你要从事Node.JS开发，那么一定要使用MongDB，而Node.JS（基于javaScript）在国内最成功的应用 –taobao</p>
+<p>MongoDB之所以能够更好的发展也取决于：面向集合的存储过程、模式自由（无模式）、方便的进行数据的存储扩充、</p>
+<p>支持索引、支持短暂数据保留、具有完整的数据状态监控、基于BSON应用</p>
+<h2 id="业务应用场景："><a href="#业务应用场景：" class="headerlink" title="业务应用场景："></a>业务应用场景：</h2><p>High performace - 对数据库并发读写的需求</p>
+<p>Huge Storage - 对海量数据的高效率存储和访问的需求</p>
+<p>High Scalablity &amp;&amp; High Avaliablity - 对数据库的高扩展性和高可用性的需求</p>
+<h1 id="二、安装与配置"><a href="#二、安装与配置" class="headerlink" title="二、安装与配置"></a>二、安装与配置</h1><p><a href="www.mongodb.com">下载</a></p>
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>进入bin目录打开cmd配置db：</p>
+<p>先创建data/db目录存放数据，再手动命令行配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">monogd --dbpath ..\data\db</span><br></pre></td></tr></table></figure>
+
+<p>或</p>
+<p>b编写/config/mongod.conf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#The directoy where the mongod instance stores its data.Default Value is &quot;\data\db&quot; on windows.</span><br><span class="line">dbpath=D:\study\software\MongoDB\MongoDB-4.2.15\data\db</span><br></pre></td></tr></table></figure>
+
+<p>第一种：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod -f ../config/mongd.conf</span><br></pre></td></tr></table></figure>
+
+<p>第二种：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --config ../config/mongod.conf</span><br></pre></td></tr></table></figure>
+
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>创建data和log目录，配置指定该db目录和log日志文件路径</p>
+<p>配置/usr/local/mongodb/single/mongod.conf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">systemLog:</span><br><span class="line">  destination: file</span><br><span class="line">  path: &quot;/usr/local/mongodb-4.2.15/single/log/mongod.log&quot;</span><br><span class="line">  logAppend: true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">storage:</span><br><span class="line">  dbPath: &quot;/usr/local/mongodb-4.2.15/single/data/db&quot;</span><br><span class="line">  journal:</span><br><span class="line">    enabled: true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">processManagement:</span><br><span class="line">  fork: true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">net:</span><br><span class="line">  bindIp: localhost,172.30.77.41</span><br><span class="line">  port: 27017</span><br></pre></td></tr></table></figure>
+
+<p>配置完成后启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongodb-4.2.15]<span class="comment"># bin/mongod -f ./single/mongod.conf</span></span><br></pre></td></tr></table></figure>
+
+<p>提示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">forked process: 208809</span><br><span class="line">child process started successfully, parent exiting</span><br></pre></td></tr></table></figure>
+
+<p>登录数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/mongo</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、数据库的创建与删除"><a href="#三、数据库的创建与删除" class="headerlink" title="三、数据库的创建与删除"></a>三、数据库的创建与删除</h1><p>创建：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use articledb</span><br></pre></td></tr></table></figure>
+
+<p>删除：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.dropDatabase()</span><br></pre></td></tr></table></figure>
+
+<p>查看当前数据库</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db</span><br></pre></td></tr></table></figure>
+
+<h1 id="四、集合操作"><a href="#四、集合操作" class="headerlink" title="四、集合操作"></a>四、集合操作</h1><p>查看集合</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> collections</span><br></pre></td></tr></table></figure>
+
+<h1 id="五、文档操作"><a href="#五、文档操作" class="headerlink" title="五、文档操作"></a>五、文档操作</h1><h2 id="插入："><a href="#插入：" class="headerlink" title="插入："></a>插入：</h2><p>插入单个文档</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.insert(&#123;&quot;article&quot;:&quot;10000&quot;,&quot;content&quot;:&quot;今天天气真好&quot;,&quot;userid&quot;:&quot;1001&quot;,&quot;status&quot;:<span class="keyword">null</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>插入多条文档</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">db.comment.insertMany(</span><br><span class="line">[&#123;&quot;article&quot;:&quot;10000&quot;,&quot;content&quot;:&quot;今天天气真好&quot;,&quot;userid&quot;:&quot;1001&quot;,&quot;status&quot;:<span class="keyword">null</span>&#125;,</span><br><span class="line">&#123;&quot;article&quot;:&quot;10000&quot;,&quot;content&quot;:&quot;今天天气真好&quot;,&quot;userid&quot;:&quot;1002&quot;,&quot;status&quot;:<span class="keyword">null</span>&#125;,</span><br><span class="line">&#123;&quot;article&quot;:&quot;10000&quot;,&quot;content&quot;:&quot;今天天气真好&quot;,&quot;userid&quot;:&quot;1003&quot;,&quot;status&quot;:<span class="keyword">null</span>&#125;,</span><br><span class="line">&#123;&quot;article&quot;:&quot;10000&quot;,&quot;content&quot;:&quot;今天天气真好&quot;,&quot;userid&quot;:&quot;1005&quot;,&quot;status&quot;:<span class="keyword">null</span>&#125;,</span><br><span class="line">&#123;&quot;article&quot;:&quot;10000&quot;,&quot;content&quot;:&quot;今天天气真好&quot;,&quot;userid&quot;:&quot;1005&quot;,&quot;status&quot;:<span class="keyword">null</span>&#125;,</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+<p>还可以使用</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">try&#123;</span><br><span class="line">db.comment.insertMany(</span><br><span class="line">[&#123;&quot;article&quot;:&quot;10000&quot;,&quot;content&quot;:&quot;今天天气真好&quot;,&quot;userid&quot;:&quot;1001&quot;,&quot;status&quot;:<span class="keyword">null</span>&#125;,</span><br><span class="line">&#123;&quot;article&quot;:&quot;10000&quot;,&quot;content&quot;:&quot;今天天气真好&quot;,&quot;userid&quot;:&quot;1002&quot;,&quot;status&quot;:<span class="keyword">null</span>&#125;,</span><br><span class="line">&#123;&quot;article&quot;:&quot;10000&quot;,&quot;content&quot;:&quot;今天天气真好&quot;,&quot;userid&quot;:&quot;1003&quot;,&quot;status&quot;:<span class="keyword">null</span>&#125;,</span><br><span class="line">&#123;&quot;article&quot;:&quot;10000&quot;,&quot;content&quot;:&quot;今天天气真好&quot;,&quot;userid&quot;:&quot;1005&quot;,&quot;status&quot;:<span class="keyword">null</span>&#125;,</span><br><span class="line">&#123;&quot;article&quot;:&quot;10000&quot;,&quot;content&quot;:&quot;今天天气真好&quot;,&quot;userid&quot;:&quot;1005&quot;,&quot;status&quot;:<span class="keyword">null</span>&#125;,</span><br><span class="line">]);</span><br><span class="line">&#125;catch(e)&#123;</span><br><span class="line">  print(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查询："><a href="#查询：" class="headerlink" title="查询："></a>查询：</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.find()</span><br></pre></td></tr></table></figure>
+
+<p>代参查询满足条件，可能不止一条</p>
+<p>带一个参数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.find(&#123;userid:&quot;1003&quot;&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>带多个参数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.find(&#123;article:&quot;10000&quot;&#125;,&#123;userid:&quot;1003&quot;&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>查询一条</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.findOne(&#123;userid:&quot;1002&quot;&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="更新："><a href="#更新：" class="headerlink" title="更新："></a>更新：</h2><p>覆盖更新，json对象会更新覆盖（会失去没有修改过的json对象）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.update(&#123;_id:ObjectId(&quot;61221f645f7003e989379e40&quot;)&#125;, &#123;status:&quot;1&quot;&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>比如：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;61221f645f7003e989379e40&quot;), &quot;article&quot; : &quot;10000&quot;, &quot;content&quot; : &quot;今天天气真好&quot;, &quot;userid&quot; : &quot;1001&quot;, &quot;status&quot; : <span class="keyword">null</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;61221f645f7003e989379e40&quot;), &quot;status&quot; : &quot;1&quot; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>非覆盖更新（原json对象保持不变）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.update(&#123;_id:ObjectId(&quot;61221f645f7003e989379e41&quot;)&#125;, &#123;$<span class="keyword">set</span>:&#123;status:&quot;1&quot;&#125;&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>比如：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;61221f645f7003e989379e41&quot;), &quot;article&quot; : &quot;10000&quot;, &quot;content&quot; : &quot;今天天气真好&quot;, &quot;userid&quot; : &quot;1002&quot;, &quot;status&quot; : <span class="keyword">null</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;_id&quot; : ObjectId(&quot;61221f645f7003e989379e41&quot;), &quot;article&quot; : &quot;10000&quot;, &quot;content&quot; : &quot;今天天气真好&quot;, &quot;userid&quot; : &quot;1002&quot;, &quot;status&quot; : &quot;1&quot; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果查询结果有多个，想把它们都修改了，参数后面跟上一个json对象 {multi: true}  ，表明全部修改，默认只修改第一条</p>
+<p>根据id自增字段</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.update(&#123;_id:&quot;612376cde9acd86e0584f8cd&quot;&#125;,&#123;$inc:&#123;likenum:NumberInt(<span class="number">1</span>)&#125;&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除："><a href="#删除：" class="headerlink" title="删除："></a>删除：</h2><p>查询到满足条件的都删除</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.remove(&#123;userid:&quot;1002&quot;&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="六、文档分页查询"><a href="#六、文档分页查询" class="headerlink" title="六、文档分页查询"></a>六、文档分页查询</h1><h2 id="统计查询："><a href="#统计查询：" class="headerlink" title="统计查询："></a>统计查询：</h2><p>返回查询的条数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.<span class="built_in">count</span>()</span><br></pre></td></tr></table></figure>
+
+<h2 id="分页列表查询："><a href="#分页列表查询：" class="headerlink" title="分页列表查询："></a>分页列表查询：</h2><p>返回查询的前三条数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.find().limit(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>跳过前两条数据，返回查询的三条数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.find().limit(<span class="number">3</span>).<span class="keyword">skip</span>(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="排序查询："><a href="#排序查询：" class="headerlink" title="排序查询："></a>排序查询：</h2><p>对某一成员进行排序</p>
+<p>1.升序：{userid:1}</p>
+<p>2.降序：{userid:-1}</p>
+<p>单个排序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.find().sort(&#123;userid:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>多个排序</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.find().sort(&#123;userid:<span class="number">1</span>&#125;,status:&quot;-1&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="七、文档的更多查询"><a href="#七、文档的更多查询" class="headerlink" title="七、文档的更多查询"></a>七、文档的更多查询</h1><h2 id="模糊查询-正则表达式复杂查询："><a href="#模糊查询-正则表达式复杂查询：" class="headerlink" title="模糊查询/正则表达式复杂查询："></a>模糊查询/正则表达式复杂查询：</h2><p>db,collection.find(field:/正则表达式/) </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.find(&#123;content:<span class="operator">/</span>天气<span class="operator">/</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="比较查询："><a href="#比较查询：" class="headerlink" title="比较查询："></a>比较查询：</h2><p>db.集合名称.find({“field”:{$gt: value }})  //大于</p>
+<p>db.集合名称.find({“field”:{$lt: value }})  //大于</p>
+<p>db.集合名称.find({“field”:{$gte: value }}) //大于等于</p>
+<p>db.集合名称.find({“field”:{$lte: value }})  //小于等于</p>
+<p>db.集合名称.find({“field”:{$ne: value }})  //不等于</p>
+<p>包含：</p>
+<p>db.集合名称.find({userid:{$in:[“1003”,”1004”]}})</p>
+<p>不包含</p>
+<p>db.集合名称.find({userid:{$nin:[“1003”,”1004”]}})</p>
+<h2 id="条件查询："><a href="#条件查询：" class="headerlink" title="条件查询："></a>条件查询：</h2><p>and：和</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.find(&#123;$<span class="keyword">and</span>:  [  </span><br><span class="line">&#123;likenum:&#123;$lt:NumberInt(<span class="number">700</span>)&#125;&#125;,</span><br><span class="line">&#123;likenum:&#123;$lt:NumberInt(<span class="number">2000</span>)&#125;&#125;  </span><br><span class="line">]     </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>or：或</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">db.集合名称.find(&#123;$<span class="keyword">or</span>:  [  </span><br><span class="line">&#123;likenum:&#123;$lt:NumberInt(<span class="number">700</span>)&#125;&#125;,</span><br><span class="line">&#123;likenum:&#123;$gt:NumberInt(<span class="number">2000</span>)&#125;&#125;  </span><br><span class="line">]     </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="八、索引管理操作"><a href="#八、索引管理操作" class="headerlink" title="八、索引管理操作"></a>八、索引管理操作</h1><h2 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引:"></a>创建索引:</h2><p>单字段：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.createIndex(&#123;userid:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>多字段索引：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.createIndex(&#123;userid:<span class="number">1</span>,content:<span class="number">-1</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取索引："><a href="#获取索引：" class="headerlink" title="获取索引："></a>获取索引：</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.getIndexes()</span><br></pre></td></tr></table></figure>
+
+<h2 id="移除索引："><a href="#移除索引：" class="headerlink" title="移除索引："></a>移除索引：</h2><p>按照规则：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.dropIndex(&#123;userid:<span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>按照name:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.dropIndex(&quot;userid_1_content_-1&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>移除所有索引，除了默认索引</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.dropIndexes()</span><br></pre></td></tr></table></figure>
+
+<h1 id="九、索引的使用"><a href="#九、索引的使用" class="headerlink" title="九、索引的使用"></a>九、索引的使用</h1><h2 id="执行计划："><a href="#执行计划：" class="headerlink" title="执行计划："></a>执行计划：</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.find(&#123;userid:&quot;1003&quot;&#125;).explain()</span><br></pre></td></tr></table></figure>
+
+<p>没有使用索引：集合扫描</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;winningPlan&quot; : &#123;</span><br><span class="line">			&quot;stage&quot; : &quot;COLLSCAN&quot;,</span><br></pre></td></tr></table></figure>
+
+<p>使用索引：索引扫描、再从集合抓取</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;winningPlan&quot; : &#123;</span><br><span class="line">			&quot;stage&quot; : &quot;FETCH&quot;,</span><br><span class="line">			&quot;inputStage&quot; : &#123;</span><br><span class="line">				&quot;stage&quot; : &quot;IXSCAN&quot;,</span><br></pre></td></tr></table></figure>
+
+<h2 id="涵盖的查询："><a href="#涵盖的查询：" class="headerlink" title="涵盖的查询："></a>涵盖的查询：</h2><p>不去集合查询，而直接查询索引返回，数据从索引拿到</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.find(&#123;userid:&quot;1003&quot;&#125;,&#123;userid:<span class="number">1</span>,_id:<span class="number">0</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="十、findBy属性字段分页查询"><a href="#十、findBy属性字段分页查询" class="headerlink" title="十、findBy属性字段分页查询"></a>十、findBy属性字段分页查询</h1><p>继承接口findBy属性方法，从而调用框架方法查询分页</p>
+<h2 id="dao接口："><a href="#dao接口：" class="headerlink" title="dao接口："></a>dao接口：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">CommentRepository</span> <span class="keyword">extends</span> <span class="title class_">MongoRepository</span>&lt;Comment, String&gt; &#123;</span><br><span class="line">    Page&lt;Comment&gt; <span class="title function_">findByParentid</span><span class="params">(String parentid, Pageable pageable)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="service实现："><a href="#service实现：" class="headerlink" title="service实现："></a>service实现：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"> <span class="keyword">public</span> Page&lt;Comment&gt; <span class="title function_">findCommentByParentid</span><span class="params">(String parentid, <span class="type">int</span> page, <span class="type">int</span> size)</span> &#123;</span><br><span class="line">     <span class="keyword">return</span> commentRepository.findByParentid(parentid, PageRequest.of(page, size));</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="page的索引从0开始，size是页面大小"><a href="#page的索引从0开始，size是页面大小" class="headerlink" title="page的索引从0开始，size是页面大小"></a>page的索引从0开始，size是页面大小</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testFindCommentByParentid</span><span class="params">()</span>&#123;</span><br><span class="line">    Page&lt;Comment&gt; page = commentService.findCommentByParentid(<span class="string">&quot;3&quot;</span>, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">    System.out.println(page.getTotalElements());</span><br><span class="line">    System.out.println(page.getContent());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="十一、mongoTemplate实现点赞"><a href="#十一、mongoTemplate实现点赞" class="headerlink" title="十一、mongoTemplate实现点赞"></a>十一、mongoTemplate实现点赞</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">updateCommentLikenum</span><span class="params">(String id)</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//查询条件</span></span><br><span class="line">    <span class="type">Query</span> <span class="variable">query</span> <span class="operator">=</span> Query.query(Criteria.where(<span class="string">&quot;_id&quot;</span>).is(id));</span><br><span class="line">    System.out.println(query);</span><br><span class="line">    <span class="comment">//更新条件</span></span><br><span class="line">    <span class="type">Update</span> <span class="variable">update</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Update</span>();</span><br><span class="line">    update.inc(<span class="string">&quot;likenum&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="type">UpdateResult</span> <span class="variable">updateResult</span> <span class="operator">=</span> mongoTemplate.updateFirst(query, update, Comment.class);</span><br><span class="line">    System.out.println(updateResult);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">testUbpdateCommentLikenum</span><span class="params">()</span>&#123;</span><br><span class="line">    commentService.updateCommentLikenum(<span class="string">&quot;612376cde9acd86e0584f8cd&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="十二、副本集"><a href="#十二、副本集" class="headerlink" title="十二、副本集"></a>十二、副本集</h1><h2 id="副本集三个角色："><a href="#副本集三个角色：" class="headerlink" title="副本集三个角色："></a>副本集三个角色：</h2><p>主要成员（Primary）：主要接收所有写操作，就是主节点。</p>
+<p>副本成员（Replicate）：从主节点通过复制操作以维护相同的数据集，即备份数据，不可写操作，但可以读操作（需要配置），是默认的一种从节点类型。</p>
+<p>仲裁者（Arbiter）：不保留任何数据的副本，只具有投票选举作用，当然也可以将仲裁服务器维护为副本集的一部分，即副本成员同时也可以是仲裁者，也是一种从节点类型。</p>
+<h2 id="副本集的创建："><a href="#副本集的创建：" class="headerlink" title="副本集的创建："></a>副本集的创建：</h2><p>副本集架构目标：一主一副本一仲裁</p>
+<p>（1）首先先做安全认证</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">openssl rand -<span class="built_in">base64</span> 90 -out /etc/mongodb/mongodb-keyfile</span><br><span class="line">groupadd mongodb</span><br><span class="line">useradd -g mongodb monngodb </span><br><span class="line"><span class="built_in">chown</span> -R mongodb.mongodb /etc/mongodb/mongodb-keyfile <span class="comment">#禁止访问安全证书</span></span><br><span class="line"><span class="built_in">chmod</span> 600 /etc/mongodb/mongodb-keyfile <span class="comment">#只允许root用户读写，本地和其他用户无权限</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="主节点："><a href="#主节点：" class="headerlink" title="主节点："></a><strong>主节点：</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /usr/local/mongodb-4.2.15/replica_sets/myrs_27017/log \ &amp;</span><br><span class="line"><span class="built_in">mkdir</span> -p /usr/local/mongodb-4.2.15/replica_sets/myrs_27017/data/db</span><br></pre></td></tr></table></figure>
+
+<p>27017（mongod.conf）:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">#SystemLog Options</span><br><span class="line">systemLog:</span><br><span class="line">#MongoDB发送所有日志输出的目标指定为文件 </span><br><span class="line">  destination: file</span><br><span class="line">  #mongod或mongos应向其发送所有诊断日志记录信息的日志文件的路径 </span><br><span class="line">  path: &quot;/usr/local/mongodb-4.2.15/replica_sets/myrs_27017/log/mongod.log&quot;</span><br><span class="line">  #当mongos或mongod实例重新启动时，mongos或mongod会将新条目附加到现有日志文件的末尾</span><br><span class="line">  logAppend: true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#storage Options</span><br><span class="line">storage:</span><br><span class="line">  #mongod实例存储其数据的目录。storage.dbPath设置仅适用于mongod。 </span><br><span class="line">  dbPath: &quot;/usr/local/mongodb-4.2.15/replica_sets/myrs_27017/data/db&quot;</span><br><span class="line">  journal:</span><br><span class="line">  #启用或禁用持久性日志以确保数据文件保持有效和可恢复。 </span><br><span class="line">    enabled: true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#processManagement Options</span><br><span class="line">processManagement:</span><br><span class="line">  #启用在后台运行mongos或mongod进程的守护进程模式。 </span><br><span class="line">  fork: true</span><br><span class="line">  #指定用于保存mongos或mongod进程的进程ID的文件位置，其中mongos或mongod将写入其PID </span><br><span class="line">  pidFilePath: &quot;/mongodb/replica_sets/myrs_27017/log/mongod.pid&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#net Options</span><br><span class="line">net:</span><br><span class="line">  #服务实例绑定所有IP，有副作用，副本集初始化的时候，节点名字会自动设置为本地域名，而不是ip </span><br><span class="line">  #bindIpAll: true </span><br><span class="line">  #服务实例绑定的IP </span><br><span class="line">  bindIp: localhost,172.30.77.41</span><br><span class="line">  #bindIp #绑定的端口 </span><br><span class="line">  port: 27017</span><br><span class="line">#安全认证</span><br><span class="line">security:</span><br><span class="line">  authorization: enabled</span><br><span class="line">  keyFile: &quot;/etc/mongodb/mongodb-keyfile&quot;</span><br><span class="line">#replication Options</span><br><span class="line">replication:</span><br><span class="line">  #副本集的名称</span><br><span class="line">  replSetName: myrs</span><br></pre></td></tr></table></figure>
+
+<p>启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/mongodb-4.2.15/bin/mongod -f /usr/local/mongodb-4.2.15/replica_sets/myrs_27017/mongod.conf </span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="副本节点："><a href="#副本节点：" class="headerlink" title="副本节点："></a><strong>副本节点：</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /usr/local/mongodb-4.2.15/replica_sets/myrs_27018/log \ &amp;</span><br><span class="line"><span class="built_in">mkdir</span> -p /usr/local/mongodb-4.2.15/replica_sets/myrs_27018/data/db</span><br></pre></td></tr></table></figure>
+
+<p>27018（mongod.conf）:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#SystemLog Options</span><br><span class="line">systemLog:</span><br><span class="line">#MongoDB发送所有日志输出的目标指定为文件 </span><br><span class="line">  destination: file</span><br><span class="line">  #mongod或mongos应向其发送所有诊断日志记录信息的日志文件的路径 </span><br><span class="line">  path: &quot;/usr/local/mongodb-4.2.15/replica_sets/myrs_27018/log/mongod.log&quot;</span><br><span class="line">  #当mongos或mongod实例重新启动时，mongos或mongod会将新条目附加到现有日志文件的末尾</span><br><span class="line">  logAppend: true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#storage Options</span><br><span class="line">storage:</span><br><span class="line">  #mongod实例存储其数据的目录。storage.dbPath设置仅适用于mongod。 </span><br><span class="line">  dbPath: &quot;/usr/local/mongodb-4.2.15/replica_sets/myrs_27018/data/db&quot;</span><br><span class="line">  journal:</span><br><span class="line">  #启用或禁用持久性日志以确保数据文件保持有效和可恢复。 </span><br><span class="line">    enabled: true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#processManagement Options</span><br><span class="line">processManagement:</span><br><span class="line">  #启用在后台运行mongos或mongod进程的守护进程模式。 </span><br><span class="line">  fork: true</span><br><span class="line">  #指定用于保存mongos或mongod进程的进程ID的文件位置，其中mongos或mongod将写入其PID </span><br><span class="line">  pidFilePath: &quot;/usr/local/mongodb-4.2.15/replica_sets/myrs_27018/log/mongod.pid&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#net Options</span><br><span class="line">net:</span><br><span class="line">  #服务实例绑定所有IP，有副作用，副本集初始化的时候，节点名字会自动设置为本地域名，而不是ip </span><br><span class="line">  #bindIpAll: true </span><br><span class="line">  #服务实例绑定的IP </span><br><span class="line">  bindIp: localhost,172.30.77.41</span><br><span class="line">  #bindIp #绑定的端口 </span><br><span class="line">  port: 27018</span><br><span class="line">#安全认证</span><br><span class="line">security:</span><br><span class="line">  authorization: enabled</span><br><span class="line">  keyFile: &quot;/etc/mongodb/mongodb-keyfile&quot;</span><br><span class="line">#replication Options</span><br><span class="line">replication:</span><br><span class="line">  #副本集的名称</span><br><span class="line">  replSetName: myrs</span><br></pre></td></tr></table></figure>
+
+<p>启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/mongob-4.2.15/bin/mongod -f /usr/local/mongodb-4.2.15/replica_sets/myrs_27018/mongod.conf </span><br></pre></td></tr></table></figure>
+
+<h2 id="仲裁节点："><a href="#仲裁节点：" class="headerlink" title="仲裁节点："></a><strong>仲裁节点：</strong></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /usr/local/mongodb-4.2.15/replica_sets/myrs_27019/log \ &amp;</span><br><span class="line"><span class="built_in">mkdir</span> -p /usr/local/mongodb-4.2.15/replica_sets/myrs_27019/data/db</span><br></pre></td></tr></table></figure>
+
+<p>27019（mongod.conf）:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#SystemLog Options</span><br><span class="line">systemLog:</span><br><span class="line">#MongoDB发送所有日志输出的目标指定为文件 </span><br><span class="line">  destination: file</span><br><span class="line">  #mongod或mongos应向其发送所有诊断日志记录信息的日志文件的路径 </span><br><span class="line">  path: &quot;/usr/local/mongodb-4.2.15/replica_sets/myrs_27019/log/mongod.log&quot;</span><br><span class="line">  #当mongos或mongod实例重新启动时，mongos或mongod会将新条目附加到现有日志文件的末尾</span><br><span class="line">  logAppend: true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#storage Options</span><br><span class="line">storage:</span><br><span class="line">  #mongod实例存储其数据的目录。storage.dbPath设置仅适用于mongod。 </span><br><span class="line">  dbPath: &quot;/usr/local/mongodb-4.2.15/replica_sets/myrs_27019/data/db&quot;</span><br><span class="line">  journal:</span><br><span class="line">  #启用或禁用持久性日志以确保数据文件保持有效和可恢复。 </span><br><span class="line">    enabled: true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#processManagement Options</span><br><span class="line">processManagement:</span><br><span class="line">  #启用在后台运行mongos或mongod进程的守护进程模式。 </span><br><span class="line">  fork: true</span><br><span class="line">  #指定用于保存mongos或mongod进程的进程ID的文件位置，其中mongos或mongod将写入其PID </span><br><span class="line">  pidFilePath: &quot;/usr/local/mongodb-4.2.15/replica_sets/myrs_27019/log/mongod.pid&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#net Options</span><br><span class="line">net:</span><br><span class="line">  #服务实例绑定所有IP，有副作用，副本集初始化的时候，节点名字会自动设置为本地域名，而不是ip </span><br><span class="line">  #bindIpAll: true </span><br><span class="line">  #服务实例绑定的IP </span><br><span class="line">  bindIp: localhost,172.30.77.41</span><br><span class="line">  #bindIp #绑定的端口 </span><br><span class="line">  port: 27019</span><br><span class="line">#安全认证</span><br><span class="line">security:</span><br><span class="line">  authorization: enabled</span><br><span class="line">  keyFile: &quot;/etc/mongodb/mongodb-keyfile&quot;</span><br><span class="line">#replication Options</span><br><span class="line">replication:</span><br><span class="line">  #副本集的名称</span><br><span class="line">  replSetName: myrs</span><br></pre></td></tr></table></figure>
+
+<p>启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/mongodb-4.2.15/bin/mongod -f /usr/local/mongodb-4.2.15/replica_sets/myrs_27019/mongod.conf </span><br></pre></td></tr></table></figure>
+
+<h1 id="初始化副本集："><a href="#初始化副本集：" class="headerlink" title="初始化副本集："></a>初始化副本集：</h1><p>客户端登录：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./mongo --host=172.30.77.41 --port=27017</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">&gt;</span> rs.initiate()</span><br></pre></td></tr></table></figure>
+
+<p>切记，其他节点不要初始化，或者</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">config<span class="operator">=</span></span><br><span class="line">&#123;</span><br><span class="line">	_id:<span class="string">&#x27;mongo_rep&#x27;</span>,members:[</span><br><span class="line">		&#123;_id:<span class="number">0</span>, host:<span class="string">&#x27;192.168.163.125:27017&#x27;</span>&#125;,</span><br><span class="line">		&#123;_id:<span class="number">1</span>, host:<span class="string">&#x27;192.168.163.126:27017&#x27;</span>&#125;,</span><br><span class="line">		&#123;_id:<span class="number">2</span>, host:<span class="string">&#x27;192.168.163.127:27017&#x27;</span>&#125;,</span><br><span class="line">		&#123;_id:<span class="number">3</span>, host:<span class="string">&#x27;192.168.163.128:27017&#x27;</span>&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br><span class="line">rs.initiate(config)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rs.conf()</span><br></pre></td></tr></table></figure>
+
+<p>建立角色和账号, 用于管理副本集</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">use admin</span><br><span class="line">db.createUser(</span><br><span class="line">     &#123;</span><br><span class="line">       <span class="keyword">user</span>:&quot;root&quot;,</span><br><span class="line">       pwd:&quot;root&quot;,</span><br><span class="line">       roles:[&#123;role:&quot;root&quot;,db:&quot;admin&quot;&#125;]</span><br><span class="line">     &#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.auth(&quot;root&quot;,&quot;root&quot;) #验证身份才能使用命令</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.getUsers()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>说明：</p>
+<ul>
+<li>“_id”：“myrs”：副本集的配置数据存储的主键值，默认就是副本集的名字</li>
+<li>“members”：副本集成员数组，此时只有一个“host”：“172.30.77.41”，该成员不是仲裁节点：“arbiterOnly”：false，优先级（权重值）：”priority”：1</li>
+<li>“setting”：副本集的参数配置</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rs.status()</span><br></pre></td></tr></table></figure>
+
+<p>查看节点的状态</p>
+<h1 id="添加副本从节点："><a href="#添加副本从节点：" class="headerlink" title="添加副本从节点："></a>添加副本从节点：</h1><p>注意添加其他节点时，要被添加的节点必须未初始化，否则将会报错Received heartbeat from member with the same，id值一样，副本集中节点之间的id值不能相同，具有唯一性，否则导致混乱，所有报错，初始化会默认为0，故不能初始化</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rs.add(&quot;172.30.77.41:27018&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="添加仲裁节点："><a href="#添加仲裁节点：" class="headerlink" title="添加仲裁节点："></a>添加仲裁节点：</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rs.addArb(&quot;172.30.77.41:27019&quot;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="读写操作："><a href="#读写操作：" class="headerlink" title="读写操作："></a>读写操作：</h1><p>主节点可以读写操作：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.insert(&#123;&quot;articleid&quot;:&quot;1001&quot;,&quot;content&quot;:&quot;今天天气真好阳光明媚&quot;,&quot;userid&quot;:&quot;1001&quot;,&quot;nickname&quot;:&quot;Rose&quot;,&quot;createdatetime&quot;:&quot;new Date()&quot;&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.comment.find()</span><br></pre></td></tr></table></figure>
+
+
+
+<p>从节点只能读操作：</p>
+<p>先承认是副本集中的从节点</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rs.slaveOk()</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> dbs</span><br></pre></td></tr></table></figure>
+
+<p>现在就实现了读写分离，主节点读写操作，从节点读操作</p>
+<p>如果需要取消作为从节点的读操作：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span>缺省默认为<span class="literal">true</span></span><br><span class="line">rs.slaveOk(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+
+<p>仲裁节点不会同步数据，不能读写操作，只能选举</p>
+<h1 id="主节点选举原则："><a href="#主节点选举原则：" class="headerlink" title="主节点选举原则："></a>主节点选举原则：</h1><ul>
+<li>主节点故障</li>
+<li>主节点网络不可达（默认心跳10秒）</li>
+<li>人工干预（rs.stepDown(600)）</li>
+</ul>
+<p>选举规则：</p>
+<ul>
+<li>票数大多数，票数相同时数据新的选举为主节点</li>
+<li>节点优先级（权重）</li>
+</ul>
+<h1 id="十三、用户角色权限"><a href="#十三、用户角色权限" class="headerlink" title="十三、用户角色权限"></a>十三、用户角色权限</h1><p><img src="https://yupeng-tuchuang.oss-cn-shenzhen.aliyuncs.com/fd9924f3-cd1a-4087-8515-6cce5ee289e6.png" alt="img"></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://fyupeng.github.io/2022/06/25/MongoDB/" title="MongoDB" target="_blank" rel="external">http://fyupeng.github.io/2022/06/25/MongoDB/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/fyupeng" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/fyupeng" target="_blank"><span class="text-dark">fyupeng</span><small class="ml-1x">Java 后端开发</small></a></h3>
+        <div>一名平凡的本科生，目前碌碌无为。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/07/01/Spring/" title="Spring"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/06/25/JDBC/" title="JDBC"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/fyupeng" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/fyupeng" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+	
+		
+	</div>
+    <div class="copyright">
+    	
+        &copy; 2022 fyupeng
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/fyupeng" target="_blank"> fyupeng </a>base on <a href="https://github.com/fyupeng/hexo-theme-pure" target="_blank">pure</a>.
+        </div>	
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'opeaNqQSpYv8bykmFJ4WTJc6-gzGzoHsz',
+    appKey: 'LDirEIkQzN7NNzJVtPBfXxLH',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
