@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>腾讯一面 | fyupeng</title>
+  <meta name="description" content="自我介绍这里一笔带过，给对面介绍自己内在 + 外在 + 校园经历 + 校园项目  + 意向岗位 腾讯子公司云智研发一面 1. 有了解过C++吗？接受转语言吗？2. 有没有了解过一些框架的底层原理、底层优化、数据库的索引优化3. 了解过哪些Map，可以从底层简单说下嘛？比如我最常使用的有HashMap、HashTable、CurrentHashMap这三种 HashMap它的底层是采用了数组+链表的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="腾讯一面">
+<meta property="og:url" content="http://fyupeng.github.io/2022/11/29/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/index.html">
+<meta property="og:site_name" content="fyupeng">
+<meta property="og:description" content="自我介绍这里一笔带过，给对面介绍自己内在 + 外在 + 校园经历 + 校园项目  + 意向岗位 腾讯子公司云智研发一面 1. 有了解过C++吗？接受转语言吗？2. 有没有了解过一些框架的底层原理、底层优化、数据库的索引优化3. 了解过哪些Map，可以从底层简单说下嘛？比如我最常使用的有HashMap、HashTable、CurrentHashMap这三种 HashMap它的底层是采用了数组+链表的">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yupeng-tuchuang.oss-cn-shenzhen.aliyuncs.com/image-20221116225644342.png">
+<meta property="article:published_time" content="2022-11-29T13:08:12.000Z">
+<meta property="article:modified_time" content="2022-11-29T13:10:20.156Z">
+<meta property="article:author" content="fyupeng">
+<meta property="article:tag" content="Java面经">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yupeng-tuchuang.oss-cn-shenzhen.aliyuncs.com/image-20221116225644342.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://fyupeng.github.io/2022/11/29/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="fyupeng" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/fyupeng" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">fyupeng</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java 后端开发</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 广州, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies">
+            
+            <i class="icon icon-eye"></i>
+            
+            <span class="menu-title">电影</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/fyupeng" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/fyupeng" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E6%A1%86%E6%9E%B6/">Java框架</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E7%AC%94%E8%AE%B0/">Java笔记</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetCode%E7%AE%97%E6%B3%95/">leetCode算法</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%8E%9F%E7%90%86/" rel="tag">Java原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%9D%A2%E7%BB%8F/" rel="tag">Java面经</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">MySQL、数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RPC/" rel="tag">RPC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/" rel="tag">jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/netty/" rel="tag">netty</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%9E%E6%BA%AF/" rel="tag">回溯</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/" rel="tag">数据库、Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" rel="tag">贪心算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE/" rel="tag">配置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag">链表</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/JDBC/" style="font-size: 13px;">JDBC</a> <a href="/tags/Java%E5%8E%9F%E7%90%86/" style="font-size: 13.33px;">Java原理</a> <a href="/tags/Java%E9%9D%A2%E7%BB%8F/" style="font-size: 14px;">Java面经</a> <a href="/tags/MVC/" style="font-size: 13px;">MVC</a> <a href="/tags/MongoDB/" style="font-size: 13px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 13px;">MySQL</a> <a href="/tags/MySQL%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">MySQL、数据库</a> <a href="/tags/Oracle/" style="font-size: 13px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 13px;">RPC</a> <a href="/tags/Spring/" style="font-size: 13.33px;">Spring</a> <a href="/tags/juc/" style="font-size: 13px;">juc</a> <a href="/tags/jvm/" style="font-size: 13px;">jvm</a> <a href="/tags/netty/" style="font-size: 13.67px;">netty</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 13px;">二分查找</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 13px;">二叉树</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 13px;">回溯</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.67px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/" style="font-size: 13px;">数据库、Redis</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 13px;">贪心算法</a> <a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 13px;">配置</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 13px;">链表</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">15</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/29/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/" class="title">腾讯一面</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-29T13:08:12.000Z" itemprop="datePublished">2022-11-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Java%E7%AC%94%E8%AE%B0/">Java笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/20/SpringBoot%E6%95%B4%E5%90%88rpc-netty-framework/" class="title">SpringBoot整合rpc-netty-framework</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-20T09:15:08.000Z" itemprop="datePublished">2022-10-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/29/%E5%B0%8F%E8%BF%88%E7%A7%91%E6%8A%80%E4%B8%80%E9%9D%A2/" class="title">小迈科技一面</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-29T08:00:20.000Z" itemprop="datePublished">2022-09-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/25/%E5%8F%B3%E5%B2%B8%E7%89%A9%E8%81%94%E9%9D%A2%E7%BB%8F/" class="title">右岸物联面经</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-25T10:28:50.000Z" itemprop="datePublished">2022-09-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/25/%E9%95%BF%E5%9F%8E%E8%BD%AF%E4%BB%B6%E9%9D%A2%E7%BB%8F/" class="title">长城软件面经</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-25T10:28:40.000Z" itemprop="datePublished">2022-09-25</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9C%89%E4%BA%86%E8%A7%A3%E8%BF%87C-%E5%90%97%EF%BC%9F%E6%8E%A5%E5%8F%97%E8%BD%AC%E8%AF%AD%E8%A8%80%E5%90%97%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">1. 有了解过C++吗？接受转语言吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%9C%89%E6%B2%A1%E6%9C%89%E4%BA%86%E8%A7%A3%E8%BF%87%E4%B8%80%E4%BA%9B%E6%A1%86%E6%9E%B6%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E3%80%81%E5%BA%95%E5%B1%82%E4%BC%98%E5%8C%96%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">2. 有没有了解过一些框架的底层原理、底层优化、数据库的索引优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BA%86%E8%A7%A3%E8%BF%87%E5%93%AA%E4%BA%9BMap%EF%BC%8C%E5%8F%AF%E4%BB%A5%E4%BB%8E%E5%BA%95%E5%B1%82%E7%AE%80%E5%8D%95%E8%AF%B4%E4%B8%8B%E5%98%9B%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">3. 了解过哪些Map，可以从底层简单说下嘛？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%BD%A0%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%98%AF%E5%A6%82%E4%BD%95%E5%8E%BB%E5%AE%9E%E7%8E%B0%E5%B9%82%E7%AD%89%E6%80%A7%E7%9A%84%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">4. 你项目中是如何去实现幂等性的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-RPC%E7%9A%84%E5%8D%8F%E8%AE%AE%E8%AE%B2%E4%B8%80%E8%AE%B2%EF%BC%8C%E6%80%8E%E4%B9%88%E5%A4%84%E7%90%86%E7%9A%84%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">5. RPC的协议讲一讲，怎么处理的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%98%AF%E6%80%8E%E4%B9%88%E5%BA%8F%E5%88%97%E5%8C%96%E7%9A%84%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">6. 项目中是怎么序列化的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E8%AF%B4%E4%B8%80%E8%AF%B4%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="toc-number">7.</span> <span class="toc-text">7.说一说深拷贝和浅拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-TCP%E5%92%8CUDP%E4%BA%86%E8%A7%A3%E4%B8%8B%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">8. TCP和UDP了解下？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-Http%E5%BA%95%E5%B1%82%E4%BD%BF%E7%94%A8%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9A"><span class="toc-number">9.</span> <span class="toc-text">9. Http底层使用了什么：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E4%B8%89%E6%AC%A1%E6%8C%A5%E6%89%8B%E8%AF%B4%E4%B8%8B%EF%BC%9F"><span class="toc-number">10.</span> <span class="toc-text">10. 三次挥手说下？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="toc-number">11.</span> <span class="toc-text">11. 进程和线程的关系？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E4%BA%86%E8%A7%A3%E8%BF%87CAS%E5%98%9B%EF%BC%9F"><span class="toc-number">12.</span> <span class="toc-text">12. 了解过CAS嘛？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E4%BD%A0%E7%9A%84RPC%E9%A1%B9%E7%9B%AE%E6%80%8E%E4%B9%88%E6%80%8E%E4%B9%88%E5%88%92%E5%88%86%E6%A8%A1%E5%9D%97%E7%9A%84%EF%BC%9F"><span class="toc-number">13.</span> <span class="toc-text">13. 你的RPC项目怎么怎么划分模块的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E5%81%9A%E4%B8%80%E5%A5%97%E7%AE%97%E6%B3%95%E9%A2%98"><span class="toc-number">14.</span> <span class="toc-text">14. 做一套算法题</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-腾讯一面" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      腾讯一面
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/11/29/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/" class="article-date">
+	  <time datetime="2022-11-29T13:08:12.000Z" itemprop="datePublished">2022-11-29</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Java%E9%9D%A2%E7%BB%8F/" rel="tag">Java面经</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/11/29/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 6.4k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 22(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <p>自我介绍这里一笔带过，给对面介绍自己内在 + 外在 + 校园经历 + 校园项目  + 意向岗位</p>
+<p>腾讯子公司云智研发一面</p>
+<h3 id="1-有了解过C-吗？接受转语言吗？"><a href="#1-有了解过C-吗？接受转语言吗？" class="headerlink" title="1. 有了解过C++吗？接受转语言吗？"></a>1. 有了解过C++吗？接受转语言吗？</h3><h3 id="2-有没有了解过一些框架的底层原理、底层优化、数据库的索引优化"><a href="#2-有没有了解过一些框架的底层原理、底层优化、数据库的索引优化" class="headerlink" title="2. 有没有了解过一些框架的底层原理、底层优化、数据库的索引优化"></a>2. 有没有了解过一些框架的底层原理、底层优化、数据库的索引优化</h3><h3 id="3-了解过哪些Map，可以从底层简单说下嘛？"><a href="#3-了解过哪些Map，可以从底层简单说下嘛？" class="headerlink" title="3. 了解过哪些Map，可以从底层简单说下嘛？"></a>3. 了解过哪些Map，可以从底层简单说下嘛？</h3><p>比如我最常使用的有<code>HashMap</code>、<code>HashTable</code>、<code>CurrentHashMap</code>这三种</p>
+<p><code>HashMap</code>它的底层是采用了数组+链表的数据结构</p>
+<p>从源码中分析，<code>HashMap</code>有一个静态内部类<code>Node</code>，<code>HashMap</code>通过成员变量<code>table</code>（<code>Node</code>数组类型）来采取<code>put</code>和<code>get</code>操作，该成员变量用关键字<code>transient</code>加以修饰，表明禁止序列化。</p>
+<p>而<code>Node</code>是<code>table</code>数组的一个结点，内部成员数据有<code>hash</code>、<code>key</code>、<code>value</code>和指向<code>Node</code>类的<code>next</code></p>
+<blockquote>
+<p>– 初始化阶段 –</p>
+</blockquote>
+<p>在这里，<code>put</code>操作后，<code>table</code>会先调用<code>resize</code>方法进行扩展，扩展后<code>table</code>才从<code>null</code>变为<code>16</code>位的<code>Node</code>数组，初始化后的每一个下标依旧为<code>null</code>，并且初始化阈值<code>threshold</code>，默认为<code>0.75 * size</code>,作用是与成员变量<code>size</code>（成员变量<code>size</code>会在每次<code>put</code>而且要该<code>key</code>值为首次操作即不存在该<code>Map</code>中会自增）进行比较，如果<code>size</code>数即表明<code>put</code>的<code>key-value</code>对的数量超过阈值<code>threshold</code>，进行下一步操作，即<code>resize</code>方法另一作用。</p>
+<blockquote>
+<p>– 扩容阶段 –</p>
+</blockquote>
+<p>扩容阶段更简单，就是将<code>阈值*2</code>来扩容，然后遍历整个<code>table</code>即<code>Node</code>数组，如果发现有<code>Node</code>结点，那么这里就出现了两种情况，第一种为每个结点上是链表结构，另一种则是红黑树结构。</p>
+<p>扩容操作是创建新<code>table</code>来扩容，没有在旧<code>table</code>上直接扩容，遍历旧<code>table</code>进行扩容时，将会对每个<code>table</code>槽位置空，多线程在扩容时会发生一些导致线程安全的问题。</p>
+<p><code>ConcurrentHashMap</code>在<code>JDK7</code>扩容时使用到了<code>ReentrantLock</code>对段加锁，这样该段的旧<code>table</code>也无法操作，<code>JDK</code>则通过一种手段设置标志位，后面操作使用<code>CAS</code>乐观锁来操作，成功则退出，不成功发现扩容标志后则参与扩容。</p>
+<p>扩容成功的结果就是发生链表转移或者是红黑树转移，都是为了将节点分散，以至于发挥出<code>Hash</code>一次命中取出和保存的高性能。</p>
+<p>当然刚开始没有结点数据，<code>oldTable</code>为<code>null</code>，不需要转移结点，然后什么事都没干，接着通过<code>hash</code>与<code>table</code>的长度进行<code>&amp;</code>操作命中槽位，<code>put</code>操作会保存到数组对应下标处即槽位中的结点。</p>
+<blockquote>
+<p>– 结点初始化 –</p>
+</blockquote>
+<p>保存之前很简单，得判断对应<code>Node</code>数组下标结点是否为<code>null</code>，因为这里是懒加载嘛，刚开始没有初始化数组的每一个元素，<code>resize</code>初始化方法也只是<code>new</code>了个<code>Node</code>数组，而且这也一样是懒加载。</p>
+<p>所以在这里会将<code>put</code>中<code>key</code>的<code>hash、key和value</code>值封装到<code>Node</code>结点中并实例化，然后赋值到对应的<code>Node</code>数组下标中。</p>
+<p>如果结点已经实例化了，那么这里有两种方式，一是链表寻址，二是树寻址，然后就是找到就覆盖，找不到就追加。</p>
+<blockquote>
+<p>– 链表寻址 –</p>
+</blockquote>
+<p>寻址前会先判断结点类型，如果<code>instanceof</code>不是<code>TreeNode</code>，那么便是链表，然后就可以开始遍历链表了，如果找到了的话，<code>key-value</code>当然就是要覆盖了，但是这里对<code>key</code>的处理分为了两种：</p>
+<p>分析之前，其实链表中所有结点都位于同一个数组下标，那么应该都必须满足每个结点的<code>hash</code>值相同，即槽位相同，所以会再一次判断<code>hash</code>值，才会用<code>key</code>去比较。</p>
+<ul>
+<li>如果<code>key</code>为基本数据类型，那么是直接通过运算符<code>==</code>来比较的，为<code>true</code>，那么就直接跳出链表遍历了，然后将刚刚在链表访问后命中的<code>Node</code>结点<code>value</code>覆盖</li>
+<li>如果key为复杂类型，那么仅仅通过<code>==</code>运算符比较是错误的，这里就需要我们去主动重写<code>equals</code>方法，让<code>key</code>值怎么比较才能相等，因为默认<code>equals</code>是<code>Object</code>比较，这里涉及到内存指针了，所以创建的对象一般内存都不同，除非浅拷贝。</li>
+<li>只是我们一般都用<code>String</code>类型，而<code>String</code>类型已经帮我们重写过了，虽然<code>String</code>类型也算是复杂类型，它重写了<code>Object</code>的<code>equals</code>方法，使得不同对象可以进行比较，比较的是对应字符串序列的内容是否相同。</li>
+</ul>
+<p>如果没找到，那么将实例化新的<code>Node</code>结点，然后追加到链表末尾，在<code>JDK7</code>中是追加到头结点，后来发现线程安全，即多线程情况下，有几率会导致链表出现死锁。</p>
+<blockquote>
+<p>– 树寻址 –</p>
+</blockquote>
+<p>首先了解下<code>TreeNode</code>，它继承了<code>LinkedHashMap.Entry</code>，而<code>Entry</code>又继承了<code>HashMap.Node</code>，归根结底还是跟链表的<code>Node</code>类似，只不过多了一些成员和方法。</p>
+<p>树寻址是判断结点是否为树节点，一般在链表转变为红黑树之后才会进行，红黑树是一棵平衡的二叉有序树，即由哈希值排序的二叉树，从根节点依次比较哈希值并遍历到叶子节点依旧没有找到，通过哈希值比较的大小直接实例出一个新的树节点给原来叶子节点的左孩子节点或右孩子节点。</p>
+<p>如果找到该节点，与链表一样的方法，则中断遍历并将该节点返回，在外部进行赋值操作。</p>
+<blockquote>
+<p>– 链表转移 –</p>
+</blockquote>
+<p>链表转移前会判断链表是否只有表头，即只有一个元素，那么通过寻找该结点<code>Node</code>的<code>Hash</code>值，与扩容后的<code>lenth</code>长度<code>&amp;</code>操作命中新的槽位</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">e : table即Node数组中的一个下标元素</span></span><br><span class="line"><span class="comment">newCap: 新table的容量</span></span><br><span class="line"><span class="comment">e.hash: 哈希值，常用于与table长度做&amp;操作来命中寻址</span></span><br><span class="line"><span class="comment">newTab: 新table</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">newTab[e.hash &amp; (newCap - <span class="number">1</span>)] = e;</span><br></pre></td></tr></table></figure>
+
+<p>如果是链表结构，那么按照<code>hash</code>值对链表拆成高位和低位链表，这里的高低位不是字面意思，我是直译源码字面意思，从代码分析：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment">如果 hash 二进制数中 与 旧table的容量表示的二进制数 所在的 位为1 &amp; 为 真，则表示为高位链表</span></span><br><span class="line"><span class="comment">如果 hash 二进制数中 与 旧table的容量表示的二进制数 所在的 位为1 &amp; 为 假，则表示为低位链表</span></span><br><span class="line"><span class="comment">从随机性角度考虑，这两种散列均匀的话各占一半</span></span><br><span class="line"><span class="comment">hash: 4字节的 int 类型</span></span><br><span class="line"><span class="comment">oldCap: 4字节的 int 类型，默认初始化为 16，二进制表示为 10000</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">e.hash &amp; oldCap) == <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>由于新<code>table</code>是旧<code>table</code>的两倍，那么低位链表命中赋值给新<code>table</code>中与旧<code>table</code>相同的下标，而高位从字面上理解，就要比低位更靠右，所以它的下标是<code>原下标+oldCap</code>，<code>oldCap</code>大小也是新<code>table</code>大小的一半，看图</p>
+<p><img src="https://yupeng-tuchuang.oss-cn-shenzhen.aliyuncs.com/image-20221116225644342.png" alt="HashMap扩容图"></p>
+<blockquote>
+<p>– 转化红黑树 –</p>
+</blockquote>
+<p>转化红黑树刚开始是不会触发的，在<code>put</code>操作的时候，在<code>table</code>中某个槽遍历链表时，如果链表长度达到扩展树阈值<code>8</code>，并且<code>table</code>长度要大于<code>64</code>。</p>
+<p>链表满足长度<code>8</code>是树转移的必要条件，在<code>table</code>初始化后且发生转化红黑树前，会先去判断<code>table</code>长度是否达到<code>64</code>，没有则会扩容，扩容前面也详细说了，上面的图就很明确，达到<code>8</code>个节点的链表，扩容后链表拆成两部分，很明显没有必要再次去转化了。</p>
+<p>如果长度满足，这时会先转变为双向链表，用于辅助树节点增加和删除以及维护树根节点。</p>
+<p>转换红黑树是从遍历该链表开始，特殊处理第一个链表节点转成树节点，遍历这棵树，通过哈希值构造一颗排序树，每次构造新节点都是从叶子节点开始，不平衡就利用红黑标记来转为平衡树。</p>
+<blockquote>
+<p>– 树转移 –</p>
+</blockquote>
+<p>树转移发生在<code>resize</code>方法中，触发的事件是当前<code>put</code>成功后的所有元素个数大于<code>table</code>的阈值（容量 * 负载因子），接着会先扩容<code>table</code>的容量，树转移时，在<code>put</code>时<code>hash</code>命中的<code>table</code>中一个插槽发现是树节点，就开始转移，转移不是从树的逻辑转移，跟链表一样，只不过还有考虑前置节点，也就是跟树转移一样构造双向链表，拆成两条待转移成树的双向链表。</p>
+<p>拆成的子双向链表，长度小于<code>6</code>就直接退化为链表，否则才将红黑树转移到新<code>table</code>的高低位上。</p>
+<blockquote>
+<p>– 特殊key –</p>
+</blockquote>
+<p>对于key为<code>null</code>值，<code>JDK7</code>与<code>JDK8</code>做法不同，但结果都是从<code>table</code>的<code>0</code>下标开始遍历。</p>
+<p><code>JDK7</code>的做法是对<code>Null</code>做了单独的<code>put</code>处理，不与非空的<code>key</code>放一起，直接单独在一个方法里面遍历<code>table</code>的<code>0</code>下标。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> V <span class="title function_">put</span><span class="params">(K key, V value)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (key == <span class="literal">null</span>)</span><br><span class="line">        <span class="keyword">return</span> putForNullKey(value);</span><br><span class="line">    <span class="type">int</span> <span class="variable">hash</span> <span class="operator">=</span> hash(key);</span><br></pre></td></tr></table></figure>
+
+<p>所以常常说<code>JDK7</code>版本可读性比<code>JDK8</code>版本要强，这是无须质疑的。</p>
+<p><code>JDK8</code>的做法更绝了，是对<code>Null</code>做了单独的<code>hash</code>处理，因为前面的<code>JDK7</code>版本对<code>key</code>做单独处理，无外乎就是<code>null</code>没法调用本地<code>native</code>方法<code>hashCode</code>取的哈希值，所以干脆就在外面传入<code>hash</code>值，并且将为<code>null</code>的<code>key</code>哈希值处理为<code>0</code>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> putVal(hash(key), key, value, <span class="literal">false</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>– 哈希定位 –</p>
+</blockquote>
+<p>在<code>HashMap</code>中其实哈希的影响还是蛮大的，所以版本迭代对哈希也做了一些改进。</p>
+<p><code>JDK7</code>版本的做法其实也是将<code>32位</code>的<code>int</code>哈希类型在命中<code>table</code>中的下标是能够分布均衡，因为<code>table</code>的数组长度没有像哈希值一样每个位随机均匀，它高位字节一般为<code>0</code>，这就导致很多时候不同的哈希值高位虽然不同，但结果命中了同一个下标，<code>JDK</code>的做法通过无符号右移，让每<code>12</code>位无差别异或，即高低位能够很好的利用到了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">h ^= k.hashCode();</span><br><span class="line"></span><br><span class="line"><span class="comment">// This function ensures that hashCodes that differ only by</span></span><br><span class="line"><span class="comment">// constant multiples at each bit position have a bounded</span></span><br><span class="line"><span class="comment">// number of collisions (approximately 8 at default load factor).</span></span><br><span class="line">h ^= (h &gt;&gt;&gt; <span class="number">20</span>) ^ (h &gt;&gt;&gt; <span class="number">12</span>);</span><br><span class="line"><span class="keyword">return</span> h ^ (h &gt;&gt;&gt; <span class="number">7</span>) ^ (h &gt;&gt;&gt; <span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+
+<p>但这种做法还不够极致，<code>JDK8</code>版本的做法，更加简单明了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (key == <span class="literal">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-你项目中是如何去实现幂等性的？"><a href="#4-你项目中是如何去实现幂等性的？" class="headerlink" title="4. 你项目中是如何去实现幂等性的？"></a>4. 你项目中是如何去实现幂等性的？</h3><p>先说下我对幂等性的理解，这样再去理解我项目对幂等性的处理。</p>
+<blockquote>
+<p>定义</p>
+</blockquote>
+<p>用户对于同一操作发起的一次请求或者多次请求的结果是一致的，不会因为多次点击而产生了副作用。</p>
+<blockquote>
+<p>实现</p>
+</blockquote>
+<p>幂等性在<code>RPC</code>上的实现，不仅要考虑结果一致性，还有考虑请求失败后负载到其他机器依旧保证幂等性，这就不能使用本地缓存来实现，而要用到分布式缓存，推荐的分布式缓存可以是<code>Redis</code>。</p>
+<p>需要考虑到重试的时机来恰当设置缓存的失效时间，一般逻辑上只要保证请求次数达到阈值后重试请求成功即可失效，可从逻辑成功调用后去手动失效，或者是达到阈值后手动失效，不过这种做法增大了<code>Redis</code>的阻塞，因为<code>Redis</code>是单线程，没法做到并发，<code>Jedis</code>虽然可以并发，但会导致线程安全问题，而<code>Jedis</code>每次请求都需要建立连接， 所以可以考虑共享一个连接，不过请求速度将大大降低。</p>
+<p>而考虑<code>Lettuce</code>则需要提前准备线程池，后面就可以直接从从线程池取连接，连接数更好管控，性能也相对高一些。</p>
+<h3 id="5-RPC的协议讲一讲，怎么处理的？"><a href="#5-RPC的协议讲一讲，怎么处理的？" class="headerlink" title="5. RPC的协议讲一讲，怎么处理的？"></a>5. RPC的协议讲一讲，怎么处理的？</h3><p><code>RPC</code>的请求过程：</p>
+<ul>
+<li>服务端启动，并将服务注册到注册中心；</li>
+<li>客户端启动通过代理调用所需的远程方法；</li>
+<li>代理从注册中心拉取服务，并使用某种负载策略调用其中一个服务；</li>
+<li>代理将客户端想要调用的方法等调用信息序列化，然后通过网络传输给服务端；</li>
+<li>服务端接收到数据后，进行反序列化；</li>
+<li>服务端得到反序列化的数据，包含需要调用的方法、参数数据，接着调用本地方法；</li>
+<li>服务端调用完成将结果进行序列化，然后通过网络传输给代理；</li>
+<li>代理拿到结果后，将结果反序列化，然后返回给客户端；</li>
+<li>客户端接收到服务端远程方法调用的结果；</li>
+</ul>
+<h3 id="6-项目中是怎么序列化的？"><a href="#6-项目中是怎么序列化的？" class="headerlink" title="6. 项目中是怎么序列化的？"></a>6. 项目中是怎么序列化的？</h3><p>项目中使用到了两种序列化方式，一种是<code>Jackson</code>，另一种是<code>Kryo</code>序列化；</p>
+<p>这两种序列化工具都提供对Java对象的序列化，即转成二进制，然后进行网络传输；</p>
+<p>接收到网络传输的二进制，再反过来进行反序列化成对象；</p>
+<p>不过项目序列化的是核心数据，对一些请求包头协议，是使用了自定义编解码的方式；</p>
+<p>对特定的字节码进行编解码解析，从而可以避免出现粘包的问题；</p>
+<p>拆完包之后，对包中的核心数据进行反序列化操作;</p>
+<p>当然具体的操作还有考虑到包的其他安全问题，比如重发包和校验码失败包。</p>
+<h3 id="7-说一说深拷贝和浅拷贝"><a href="#7-说一说深拷贝和浅拷贝" class="headerlink" title="7.说一说深拷贝和浅拷贝"></a>7.说一说深拷贝和浅拷贝</h3><p>浅拷贝主要拷贝了对象的指针，本身数据引用的是同一块内存；</p>
+<p>深拷贝则拷贝了对象本身，引用的是不同的内存。</p>
+<p>在<code>Java</code>中，深拷贝和浅拷贝有<code>Object</code>的<code>clone</code>拷贝方法（浅拷贝）；</p>
+<p><code>Arrays.copy</code>（浅拷贝）和<code>System.arraycopy</code>（浅拷贝）</p>
+<p>序列化则是深拷贝，比如Java内置的<code>ObjectOutputStream</code>的<code>writeObject</code>方法和<code>ObjectInputStream</code>的<code>readObject</code>方法；</p>
+<p>更深入来讲，浅拷贝中，目标对象对内存的操作会影响到原对象，而深拷贝则受影响。</p>
+<h3 id="8-TCP和UDP了解下？"><a href="#8-TCP和UDP了解下？" class="headerlink" title="8. TCP和UDP了解下？"></a>8. TCP和UDP了解下？</h3><p><code>TCP</code>与<code>UDP</code>都是传输层协议，<code>TCP</code>基于连接的，<code>UDP</code>基于非连接的；</p>
+<p>从连接上看，TCP需要有三次握手才能完成连接，之后才能进行通信，是可靠的连接；</p>
+<p>而<code>UDP</code>不需要连接，没有<code>TCP</code>严谨的三次握手、确认连接和四次挥手过程，是不可靠的连接；</p>
+<p><code>TCP</code>可以保证服务的可靠，一般用于高可靠服务，<code>UDP</code>不能保证服务是否可靠。</p>
+<blockquote>
+<p>特点</p>
+</blockquote>
+<p><strong>TCP：</strong></p>
+<ul>
+<li>稳定可靠，适用于要求较高的场景，需要准确无误的传输给对方，比如文件传输、发送邮件和浏览网页等；</li>
+</ul>
+<p><strong>UDP：</strong></p>
+<ul>
+<li>速度快，性能损耗少、资源占用少，但是可能产生丢包，所以适用于对实时性要求较高，但是对少量丢包，并没有太大的要求的场景，比如域名查询、电话通信和视频直播等。</li>
+</ul>
+<h3 id="9-Http底层使用了什么："><a href="#9-Http底层使用了什么：" class="headerlink" title="9. Http底层使用了什么："></a>9. Http底层使用了什么：</h3><p>TCP协议，是基于连接的。</p>
+<blockquote>
+<p>http请求报文</p>
+</blockquote>
+<p>HTTP请求报文由请求行（<code>request line</code>）、请求头部（<code>header</code>）、空行和请求数据等4个部分组成。</p>
+<p>请求行：（<code>get/post</code> 方法，<code>url</code>中的<code>path</code>路径，<code>http</code>版本）</p>
+<p>请求头部（<code>header</code>）关键字/值对组成，每行一对，关键字和值用英文冒号</p>
+<p>请求数据 (<code>body</code>)</p>
+<blockquote>
+<p>http响应报文</p>
+</blockquote>
+<p>HTTP响应报文由四个部分组成：</p>
+<ul>
+<li>状态码（<code>Status Code</code>）：描述了响应的状态。可以用来检查是否成功完成了请求。请求失败的情况下，状态码可用来找出失败的原因。如果<code>Servlet</code>没有返回状态码，默认会返回成功的状态码<code>HttpServletResponse SC OK</code>。</li>
+<li>HTTP头部（<code>HTTP Header</code>）：它们包含了更多关于响应的信息。比如：头部可以指定任务响应过期的过期日期，或者是指定用来给用户安全的传输实体内容的编码格式。如何在<code>Servlet</code>中检索<code>HTTP</code>的头部看这里。</li>
+<li>空行</li>
+<li>主体（<code>Body</code>）：它包含了响应的内容。它可以包含HTML代码、图片等。主体是由传输在HTTP消息中紧跟在头部后面的数据字节组成的。</li>
+</ul>
+<blockquote>
+<p>请求过程</p>
+</blockquote>
+<p><strong>客户端连接服务器：</strong></p>
+<p>客户端一般为<code>Web</code>浏览器，通过<code>url</code>访问服务端，与服务端建立一个<code>TCP</code>的套接字。</p>
+<p><strong>发送HTTP请求：</strong></p>
+<p>通过<code>TCP</code>套接字，发送HTTP请求时，客户端向服务端发送了一个文本的请求报文，一个请求报文由请求行、请求头部、空行和请求数据四部分组成。</p>
+<p><strong>返回HTTP响应：</strong></p>
+<p>Web服务器解析请求，定位请求资源。服务器将资源副本写到TCP套接字，有客户端读取。一个响应由状态行、响应头部、空行和响应数据四部分组成。</p>
+<p><strong>释放TCP连接：</strong></p>
+<ul>
+<li>当<code>connection</code>模式为<code>close</code>，主动关闭方为服务端，客户端被动关闭连接，释放<code>TCP</code>连接；</li>
+<li>当<code>connection</code>模式为<code>keepalive</code>，则该连接会保持一段时间，在该时间可以继续接收其他请求，长连接复用，与2.0的多路复用目的都是为了重用连接，减少连接开销。</li>
+</ul>
+<h3 id="10-三次挥手说下？"><a href="#10-三次挥手说下？" class="headerlink" title="10. 三次挥手说下？"></a>10. 三次挥手说下？</h3><p>三次挥手与四次挥手很像，先说下四次挥手。</p>
+<blockquote>
+<p>四次挥手</p>
+</blockquote>
+<p>由主动关闭方<code>(Client)</code>发起中断连接请求，也就是<code>FIN</code>报文，被动关闭方<code>(Server)</code>接收到<code>FIN</code>报文后，从协议上来说是主动关闭方在等待收到<code>FIN + ACK</code>报文段，被动关闭方由于有数据要方法，第二次挥手只发了<code>ACK</code>确认号，接着主动关闭方进入<code>FIN_WAIT</code>状态，继续等待被动关闭方的FIN报文。</p>
+<p>当被动关闭方数据发送完成后，将发送FIN报文给主动关闭方，主动关闭方收到FIN报文后，主动关闭方完成关闭，但被动关闭方并不知道FIN报文是否被接收成功，所以主动关闭方关闭前还需发送<code>ACK</code>给被动关闭方，表示已成功接收被动关闭方的<code>FIN</code>报文，这时被动关闭方就可以断开连接了。</p>
+<p>如果没收到将再次发送<code>FIN</code>报文给主动关闭方，最后主动关闭方也不知道被动关闭方是否接收，需要等待<code>2MSL</code>时间，如果没收到重发包即成功了。</p>
+<blockquote>
+<p>三次挥手</p>
+</blockquote>
+<p>三次挥手不同于四次挥手，不同是第二次与第三次挥手合并了，如果服务端没有数据要发送，就可以将第二次与第三次挥手合并，而如果有数据要发，并且客户端允许延迟收到确认，那么服务端可以将结果封装到第二次与第三次合并的报文段中一起发送。</p>
+<h3 id="11-进程和线程的关系？"><a href="#11-进程和线程的关系？" class="headerlink" title="11. 进程和线程的关系？"></a>11. 进程和线程的关系？</h3><blockquote>
+<p>定义</p>
+</blockquote>
+<p>进程是资源分配的基本单位，线程是CPU调度和分派的基本单位。</p>
+<blockquote>
+<p>包含关系</p>
+</blockquote>
+<p>线程是进程的一部分，一个线程只能属于一个进行，一个进程可以有多个线程，但至少有一个线程。</p>
+<blockquote>
+<p>内存角度</p>
+</blockquote>
+<p>每个进程分配了不同的内存空间，每个进程都有独立的代码和数据空间，多个进程可以同时运行在内存中，而同一个进程的多个线程（简称同类线程）在其分配的指定内存中运行，需要CPU来调度这一块内存区域。</p>
+<p>系统不会为线程分配资源，只能通过CPU来调度和分派资源，也就是说，进程分配内存资源，然后线程需要CPU来过渡使用这块内存。</p>
+<p>进程切换开销大，线程切换开销小。</p>
+<blockquote>
+<p>共享角度</p>
+</blockquote>
+<p>同类线程之间可以共享堆空间和方法区和运行时常量池，每个线程都有自己独立的虚拟机栈和程序计数器。</p>
+<blockquote>
+<p>进行共享的方式</p>
+</blockquote>
+<p>线程共享环境：进程代码段、进程公有数据、进程打开的文件描述符、信号处理器、进程当前目录和进程用户ID与进程组ID</p>
+<blockquote>
+<p>进程通信的方式</p>
+</blockquote>
+<ul>
+<li>匿名管道 (PIPE)</li>
+</ul>
+<p>半双工，即不能同时在两个方向上传输数据，有的系统可能支持全双工。</p>
+<p>速度慢，容量有限，且只能在父子进程间。经典的形式就是管道由父进程创建，进程fork子进程之后，就可以在父子进程之间使用了。</p>
+<ul>
+<li>命名管道 (FIFO)</li>
+</ul>
+<p>不想关的进程也能够进行数据交换。</p>
+<ul>
+<li>消息队列</li>
+</ul>
+<p>消息队列，就是一个消息的链表，是一系列保存在内核中消息的列表。</p>
+<ul>
+<li>信号量</li>
+</ul>
+<p>信号量是互斥信号量，能够用来同步通信。</p>
+<ul>
+<li>共享内存</li>
+</ul>
+<p>通过共享内存机制来实现。</p>
+<ul>
+<li>套接字</li>
+</ul>
+<p>套接字通过Socket绑定套接字，服务端开启监听被动连接，客户端主动连接，向套接字读写数据实现通信。</p>
+<ul>
+<li>信号</li>
+</ul>
+<p>一种异步通信方式，可在用户态和内核态中交互，也可以在内核态中通知用户态事件的发生。</p>
+<h3 id="12-了解过CAS嘛？"><a href="#12-了解过CAS嘛？" class="headerlink" title="12. 了解过CAS嘛？"></a>12. 了解过CAS嘛？</h3><p><code>CAS</code>是一种乐观锁的实现，<code>CAS</code>操作包含三个操作数——内存位置（<code>V</code>）、预期原值（A）期待值（<code>B</code>）。</p>
+<p>如果内存位置的值与预期值向匹配，那么处理器会自动将该位置值更新为期待值，否则不做任何操作。</p>
+<p>缺陷：无法解决<code>ABA</code>问题，在<code>Java</code>中解决该问题使用到了<code>AtomicStampReference</code>和<code>AtomicMarkableReference</code>来解决</p>
+<p>数据库中MySQL的锁机制也是通过乐观锁来实现，更具体的实现则是<code>MVCC</code>多版本并发控制。</p>
+<p>具体是两个数据结构，一个为<code>undo log</code>日志，一个为<code>readView</code>可读视图。</p>
+<p>每张表中都会有隐藏的两列，一列是<code>undo log</code>指针，指向当前行数据操作指向的数据链表结构，另一列为事务版本号<code>id</code>，即每次事务开启后都会获取一个自增长的事务<code>id</code>，这样在<code>ReadView</code>可读视图中实现乐观操作，回到最先定义乐观锁三个操作数，实现方式差不多。</p>
+<ul>
+<li><code>undo log</code> 主要对所有并发修改结果保存了下来，并以链表的形式组织。</li>
+<li><code>ReadView</code>主要处理事务<code>id</code>的可见性，包含当前活跃事务版本Id列表，活跃最小事务<code>id</code>（<code>up_limit_id</code>）即已提交最大事务<code>id + 1</code>，活跃最大事务<code>id</code>（<code>low_limit_id</code>）即最小不可见事务<code>id - 1</code>和<code>creator_trx_id</code>表示当前事务开启的版本号。</li>
+<li>活跃事务即为同一时间并发下，所有发生了交叉的事务。</li>
+</ul>
+<h3 id="13-你的RPC项目怎么怎么划分模块的？"><a href="#13-你的RPC项目怎么怎么划分模块的？" class="headerlink" title="13. 你的RPC项目怎么怎么划分模块的？"></a>13. 你的RPC项目怎么怎么划分模块的？</h3><ul>
+<li>服务发现（从注册中心获取服务及对应地址、使用负载均衡策略选择服务）</li>
+<li>服务注册者（注册服务名和对应地址到注册中心、连接注册中心、清除服务）</li>
+<li>服务提供者（存放服务实例、获取服务实例）</li>
+<li>客户端代理（处理客户端请求、处理超时重试、负责分布式请求id生成）</li>
+<li>服务端（启动服务时将服务所有类实例化并存放到服务提供者，将所有服务类对应服务名注册到服务注册者、处理客户端请求方法、处理超时包、处理重发包、处理异常包）</li>
+<li>服务端处理器（从服务提供者获取服务实例、读取请求包代理执行服务对应方法）</li>
+<li>异步请求池（客户端请求调用后立马返回future结果，由netty客户端正确读取结果后返回给异步请求池）</li>
+<li>编码与解码器（对请求包和响应包的封包和拆包）</li>
+<li>包检查器（对请求包和响应包的安全检验）</li>
+<li>注册中心（暴露服务真实地址和端口号、提供服务注册与发现）</li>
+<li>分布式缓存（缓存时间戳与序列号、重试请求号与请求结果、机器码）</li>
+<li>服务宕机钩子（中心服务下线与本地服务清除、下线机器码、线程池关闭）</li>
+</ul>
+<h3 id="14-做一套算法题"><a href="#14-做一套算法题" class="headerlink" title="14. 做一套算法题"></a>14. 做一套算法题</h3><p>如有升序链表：list1 = [1,2,3]，list2 = [1,4,5]，则合并后的链表：list = [1,1,2,3,4,5]</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> List <span class="title function_">concat</span><span class="params">(List list1, List list2)</span> &#123;</span><br><span class="line">	<span class="comment">// 头结点存储数据</span></span><br><span class="line">	<span class="type">List</span> <span class="variable">p</span> <span class="operator">=</span> list1;</span><br><span class="line">	<span class="type">List</span> <span class="variable">q</span> <span class="operator">=</span> list2;</span><br><span class="line">	</span><br><span class="line">	<span class="type">List</span> <span class="variable">newNode</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">List</span>();</span><br><span class="line">	<span class="type">List</span> <span class="variable">head</span> <span class="operator">=</span> newNode;</span><br><span class="line">	<span class="keyword">while</span>(p.next != <span class="literal">null</span> &amp;&amp; q.next != <span class="literal">null</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (p.data &lt; q.data) &#123;</span><br><span class="line">			newNode.next = p;</span><br><span class="line">			p = p.next;</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			newNode.next = q;</span><br><span class="line">			q = q.next;</span><br><span class="line">		&#125;</span><br><span class="line">		newNode = newNode.next;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// list2 仍存在节点</span></span><br><span class="line">	<span class="keyword">if</span> (p.next == <span class="literal">null</span> &amp;&amp; q.next != <span class="literal">null</span>) &#123;</span><br><span class="line">		newNode.next = q;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// list1 仍存在节点</span></span><br><span class="line">	<span class="keyword">if</span> (p.next != <span class="literal">null</span> &amp;&amp; q.next == <span class="literal">null</span>) &#123;</span><br><span class="line">		newNode.next = p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> head.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://fyupeng.github.io/2022/11/29/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/" title="腾讯一面" target="_blank" rel="external">http://fyupeng.github.io/2022/11/29/腾讯一面/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/fyupeng" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/fyupeng" target="_blank"><span class="text-dark">fyupeng</span><small class="ml-1x">Java 后端开发</small></a></h3>
+        <div>一名平凡的本科生，目前碌碌无为。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/10/20/SpringBoot%E6%95%B4%E5%90%88rpc-netty-framework/" title="SpringBoot整合rpc-netty-framework"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/fyupeng" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/fyupeng" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+	
+		
+	</div>
+    <div class="copyright">
+    	
+        &copy; 2022 fyupeng
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/fyupeng" target="_blank"> fyupeng </a>base on <a href="https://github.com/fyupeng/hexo-theme-pure" target="_blank">pure</a>.
+        </div>	
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'opeaNqQSpYv8bykmFJ4WTJc6-gzGzoHsz',
+    appKey: 'LDirEIkQzN7NNzJVtPBfXxLH',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>

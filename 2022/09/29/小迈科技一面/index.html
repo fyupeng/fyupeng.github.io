@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>小迈科技一面 | fyupeng</title>
+  <meta name="description" content="简单三分钟自我介绍自我介绍这里一笔带过，给对面介绍自己内在 + 外在 + 校园经历 + 校园项目  + 意向岗位 一面1. Java基础1.1 序列化和反序列化首先了解一下序列化和反序列化的概念 序列化：将Java对象以二进制即字节码的形式保存在磁盘文件中，可以说是保存Java对象状态的过程，序列化可以实现对象保存的持久化； 反序列化：将保存在磁盘文件中的Java字节码重新转换为Java对象的过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小迈科技一面">
+<meta property="og:url" content="http://fyupeng.github.io/2022/09/29/%E5%B0%8F%E8%BF%88%E7%A7%91%E6%8A%80%E4%B8%80%E9%9D%A2/index.html">
+<meta property="og:site_name" content="fyupeng">
+<meta property="og:description" content="简单三分钟自我介绍自我介绍这里一笔带过，给对面介绍自己内在 + 外在 + 校园经历 + 校园项目  + 意向岗位 一面1. Java基础1.1 序列化和反序列化首先了解一下序列化和反序列化的概念 序列化：将Java对象以二进制即字节码的形式保存在磁盘文件中，可以说是保存Java对象状态的过程，序列化可以实现对象保存的持久化； 反序列化：将保存在磁盘文件中的Java字节码重新转换为Java对象的过程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-29T08:00:20.000Z">
+<meta property="article:modified_time" content="2022-09-29T08:02:24.370Z">
+<meta property="article:author" content="fyupeng">
+<meta property="article:tag" content="Java面经">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://fyupeng.github.io/2022/09/29/%E5%B0%8F%E8%BF%88%E7%A7%91%E6%8A%80%E4%B8%80%E9%9D%A2/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="fyupeng" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/fyupeng" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">fyupeng</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Java 后端开发</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 广州, 中国</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">项目</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-movies">
+          <a href="/movies">
+            
+            <i class="icon icon-eye"></i>
+            
+            <span class="menu-title">电影</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/fyupeng" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/fyupeng" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E6%A1%86%E6%9E%B6/">Java框架</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E7%AC%94%E8%AE%B0/">Java笔记</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/leetCode%E7%AE%97%E6%B3%95/">leetCode算法</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDBC/" rel="tag">JDBC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E5%8E%9F%E7%90%86/" rel="tag">Java原理</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java%E9%9D%A2%E7%BB%8F/" rel="tag">Java面经</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/" rel="tag">MongoDB</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">MySQL、数据库</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle/" rel="tag">Oracle</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RPC/" rel="tag">RPC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/juc/" rel="tag">juc</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/" rel="tag">jvm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/netty/" rel="tag">netty</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="tag">二分查找</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag">二叉树</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9B%9E%E6%BA%AF/" rel="tag">回溯</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/" rel="tag">数据库、Redis</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" rel="tag">贪心算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%85%8D%E7%BD%AE/" rel="tag">配置</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag">链表</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/JDBC/" style="font-size: 13px;">JDBC</a> <a href="/tags/Java%E5%8E%9F%E7%90%86/" style="font-size: 13.33px;">Java原理</a> <a href="/tags/Java%E9%9D%A2%E7%BB%8F/" style="font-size: 14px;">Java面经</a> <a href="/tags/MVC/" style="font-size: 13px;">MVC</a> <a href="/tags/MongoDB/" style="font-size: 13px;">MongoDB</a> <a href="/tags/MySQL/" style="font-size: 13px;">MySQL</a> <a href="/tags/MySQL%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13px;">MySQL、数据库</a> <a href="/tags/Oracle/" style="font-size: 13px;">Oracle</a> <a href="/tags/RPC/" style="font-size: 13px;">RPC</a> <a href="/tags/Spring/" style="font-size: 13.33px;">Spring</a> <a href="/tags/juc/" style="font-size: 13px;">juc</a> <a href="/tags/jvm/" style="font-size: 13px;">jvm</a> <a href="/tags/netty/" style="font-size: 13.67px;">netty</a> <a href="/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" style="font-size: 13px;">二分查找</a> <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" style="font-size: 13px;">二叉树</a> <a href="/tags/%E5%9B%9E%E6%BA%AF/" style="font-size: 13px;">回溯</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 13.67px;">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/" style="font-size: 13px;">数据库、Redis</a> <a href="/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" style="font-size: 13px;">贪心算法</a> <a href="/tags/%E9%85%8D%E7%BD%AE/" style="font-size: 13px;">配置</a> <a href="/tags/%E9%93%BE%E8%A1%A8/" style="font-size: 13px;">链表</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">十一月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">七月 2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">六月 2022</a><span class="archive-list-count">15</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/11/29/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/" class="title">腾讯一面</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-11-29T13:08:12.000Z" itemprop="datePublished">2022-11-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/Java%E7%AC%94%E8%AE%B0/">Java笔记</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/10/20/SpringBoot%E6%95%B4%E5%90%88rpc-netty-framework/" class="title">SpringBoot整合rpc-netty-framework</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-10-20T09:15:08.000Z" itemprop="datePublished">2022-10-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/29/%E5%B0%8F%E8%BF%88%E7%A7%91%E6%8A%80%E4%B8%80%E9%9D%A2/" class="title">小迈科技一面</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-29T08:00:20.000Z" itemprop="datePublished">2022-09-29</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/25/%E5%8F%B3%E5%B2%B8%E7%89%A9%E8%81%94%E9%9D%A2%E7%BB%8F/" class="title">右岸物联面经</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-25T10:28:50.000Z" itemprop="datePublished">2022-09-25</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/25/%E9%95%BF%E5%9F%8E%E8%BD%AF%E4%BB%B6%E9%9D%A2%E7%BB%8F/" class="title">长城软件面经</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-25T10:28:40.000Z" itemprop="datePublished">2022-09-25</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E4%B8%89%E5%88%86%E9%92%9F%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">简单三分钟自我介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%9D%A2"><span class="toc-number">2.</span> <span class="toc-text">一面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Java%E5%9F%BA%E7%A1%80"><span class="toc-number">2.1.</span> <span class="toc-text">1. Java基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%BA%8F%E5%88%97%E5%8C%96%E5%92%8C%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">1.1 序列化和反序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E8%AF%B4%E4%B8%80%E8%AF%B4%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">2.3.</span> <span class="toc-text">1.2 说一说数据类型有哪些</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">2.4.</span> <span class="toc-text">1.3 数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-MySQL"><span class="toc-number">2.5.</span> <span class="toc-text">2. MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E7%B4%A2%E5%BC%95"><span class="toc-number">2.5.1.</span> <span class="toc-text">2.1 索引</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%8F%A3%E8%BF%B0-sql"><span class="toc-number">2.5.2.</span> <span class="toc-text">2.2 口述 sql</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-JVM"><span class="toc-number">2.6.</span> <span class="toc-text">3. JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%AD%BB%E9%94%81%E4%BA%86%E8%A7%A3%E8%BF%87%E5%90%97%EF%BC%9F"><span class="toc-number">2.6.1.</span> <span class="toc-text">3.1 线程的死锁了解过吗？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-JUC"><span class="toc-number">2.7.</span> <span class="toc-text">4. JUC</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%9C%89%E4%BA%86%E8%A7%A3%E8%BF%87%E5%90%97%EF%BC%9F"><span class="toc-number">2.7.1.</span> <span class="toc-text">4.1 线程池有了解过吗？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Linux"><span class="toc-number">2.8.</span> <span class="toc-text">5. Linux</span></a></li></ol></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-小迈科技一面" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      小迈科技一面
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/09/29/%E5%B0%8F%E8%BF%88%E7%A7%91%E6%8A%80%E4%B8%80%E9%9D%A2/" class="article-date">
+	  <time datetime="2022-09-29T08:00:20.000Z" itemprop="datePublished">2022-09-29</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Java%E9%9D%A2%E7%BB%8F/" rel="tag">Java面经</a>
+  </span>
+
+
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/29/%E5%B0%8F%E8%BF%88%E7%A7%91%E6%8A%80%E4%B8%80%E9%9D%A2/#comments" class="article-comment-link">评论</a></span>
+        
+	
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.5k(字)</span>
+	
+	
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9(分)</span>
+	
+
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="简单三分钟自我介绍"><a href="#简单三分钟自我介绍" class="headerlink" title="简单三分钟自我介绍"></a>简单三分钟自我介绍</h2><p>自我介绍这里一笔带过，给对面介绍自己内在 + 外在 + 校园经历 + 校园项目  + 意向岗位</p>
+<h2 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h2><h3 id="1-Java基础"><a href="#1-Java基础" class="headerlink" title="1. Java基础"></a>1. Java基础</h3><h3 id="1-1-序列化和反序列化"><a href="#1-1-序列化和反序列化" class="headerlink" title="1.1 序列化和反序列化"></a>1.1 序列化和反序列化</h3><p>首先了解一下序列化和反序列化的概念</p>
+<p>序列化：将Java对象以二进制即字节码的形式保存在磁盘文件中，可以说是保存Java对象状态的过程，序列化可以实现对象保存的持久化；</p>
+<p>反序列化：将保存在磁盘文件中的Java字节码重新转换为Java对象的过程；</p>
+<p>其他特点：一般<code>RPC</code>框架底层协议通信就是通过序列化和反序列化在网络上传输Java对象。</p>
+<p>序列化和反序列化的实现主要有两种，准确来说有三种方法：</p>
+<p>采用默认的序列化方式，即通过<code>ObjectOutPutStream</code>类的<code>writeObject(OutputStream out)</code>方法来序列化到输出流中</p>
+<p>输出流可以选择文件流、也可以选择管道流，甚至是二进制流</p>
+<p>文件流是直接写到文件中再读取转成对象，管道流是通过管道缓存数据，然后再通过输入流连接管道读取转成对象</p>
+<p>序列化的对象必须实现<code>Seriablized</code>接口，才能完成序列化和反序列化操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line">   <span class="keyword">private</span> String name;</span><br><span class="line">   <span class="keyword">private</span> Integer age;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第一种实现（采用默认）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//FileOutputStream fos = new FileOutputStream(&quot;D:\\student.txt&quot;);</span></span><br><span class="line">      <span class="type">PipedOutputStream</span> <span class="variable">pos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PipedOutputStream</span>();</span><br><span class="line">      <span class="type">PipedInputStream</span> <span class="variable">pis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PipedInputStream</span>();</span><br><span class="line">      pis.connect(pos);</span><br><span class="line">      <span class="type">ObjectOutputStream</span> <span class="variable">oos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(pos);</span><br><span class="line"></span><br><span class="line">      <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>();</span><br><span class="line">      student.setAge(<span class="number">21</span>);</span><br><span class="line">      student.setName(<span class="string">&quot;zs&quot;</span>);</span><br><span class="line">      oos.writeObject(student);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//FileInputStream fis = new FileInputStream(&quot;D:\\student.txt&quot;);</span></span><br><span class="line">      <span class="type">ObjectInputStream</span> <span class="variable">ois</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(pis);</span><br><span class="line">      <span class="type">Student</span> <span class="variable">res</span> <span class="operator">=</span> (Student) ois.readObject();</span><br><span class="line">      System.out.println(res);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第二种实现（自定义）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自定义协议 比如我可以将加入对象头 cafe babe</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">readObject</span><span class="params">(ObjectInputStream in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;自定义反序列化&quot;</span>);</span><br><span class="line">      <span class="type">int</span> <span class="variable">magic</span> <span class="operator">=</span> in.readInt();</span><br><span class="line">      <span class="built_in">this</span>.name = (String) in.readObject();</span><br><span class="line">      <span class="built_in">this</span>.age = (Integer) in.readObject();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">// 自定义协议 比如我可以将加入对象头 cafe babe</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">writeObject</span><span class="params">(ObjectOutputStream out)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;自定义序列化&quot;</span>);</span><br><span class="line">      <span class="comment">// 4 字节 魔数</span></span><br><span class="line">      out.writeInt(<span class="number">0xCAFEBABE</span>);</span><br><span class="line">      out.writeObject(<span class="built_in">this</span>.name);</span><br><span class="line">      out.writeObject(<span class="built_in">this</span>.age);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第三种（自定义）</li>
+</ul>
+<p>实现接口<code>Externalizable</code>并重写方法，其实跟第二种差别不大，只是第二种有默认的私有方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">writeExternal</span><span class="params">(ObjectOutput out)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;实现 Externalizable 接口的自定义序列化&quot;</span>);</span><br><span class="line">      out.writeObject(<span class="built_in">this</span>.name);</span><br><span class="line">      out.writeObject(<span class="built_in">this</span>.age);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">readExternal</span><span class="params">(ObjectInput in)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;实现 Externalizable 接口的自定义反序列化&quot;</span>);</span><br><span class="line">      <span class="built_in">this</span>.name = (String) in.readObject();</span><br><span class="line">      <span class="built_in">this</span>.age = (Integer) in.readObject();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>解决反序列化破坏单例</p>
+<ul>
+<li>在单例模式中，序列化可以破坏单例，这是需要重写<code>readResolve()</code> 方法，将之前的单例实例对象返回即可保证单例。</li>
+</ul>
+<p>解决反射破坏单例</p>
+<p>反射创建对象根本也是要调用构造方法，而且可以无视构造方法的访问修饰符（<code>public</code>、<code>private</code>）</p>
+<ul>
+<li>Java规定反射不能破坏枚举类型，采用枚举构造单例</li>
+<li>构造方法执行前，单例实例逻辑上不应该创建而且只执行一次，可判断是否已创建来避免反射创建多个实例，前提单例已先于反射</li>
+</ul>
+<h3 id="1-2-说一说数据类型有哪些"><a href="#1-2-说一说数据类型有哪些" class="headerlink" title="1.2 说一说数据类型有哪些"></a>1.2 说一说数据类型有哪些</h3><p>Java有八种基本数据类型 + String</p>
+<p>1个位的<code>bit</code>，布尔类型的<code>boolean</code>，2个字节的<code>short</code>，4个字节的<code>int</code>、<code>char</code>，8个字节的<code>long</code>、<code>double</code>、<code>float</code></p>
+<p>其中基本类型中的包装类型常用的有Integer、Long</p>
+<p>其中<code>Integer</code>会自动进行拆封装处理，也就是可以直接跟<code>int</code>类型比较数值上的大小</p>
+<p>底层在<code>-128-127</code>之间会做缓存，在这之间通过<code>Integer.valueOf(int)</code>创建的对象都是同一个,使用了享元设计模式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(<span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">1</span>) == <span class="number">1</span>);</span><br><span class="line">System.out.println(Integer.valueOf(<span class="number">1</span>) == Integer.valueOf(<span class="number">1</span>));</span><br><span class="line">System.out.println(Integer.valueOf(<span class="number">128</span>) == Integer.valueOf(<span class="number">128</span>));</span><br></pre></td></tr></table></figure>
+
+<p>结果</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span></span><br><span class="line"><span class="literal">true</span></span><br><span class="line"><span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-数据结构"><a href="#1-3-数据结构" class="headerlink" title="1.3 数据结构"></a>1.3 数据结构</h3><p>给你你个浏览器，要求设计前进和后退的数据结构，优先考虑性能</p>
+<p>那么由于浏览器前进后退访问，是一种<code>FIFO</code>的结构，比如你连续点击前进几个页面，最先进的页面最后返回，即<code>LIFO</code></p>
+<p>那么可以考虑栈的结构设计，栈结构设计要考虑性能，首先我们可以分析到，浏览器页面跳转没有涉及到页面的修改，即用于查询</p>
+<p>那么优先考虑数组而不考虑链表</p>
+<p>我们可以设计两个栈数组，一个用于入栈已前进的页面，一个用于入栈已后退的页面，取其中一个栈顶元素作为当前页面</p>
+<h3 id="2-MySQL"><a href="#2-MySQL" class="headerlink" title="2. MySQL"></a>2. MySQL</h3><h4 id="2-1-索引"><a href="#2-1-索引" class="headerlink" title="2.1 索引"></a>2.1 索引</h4><p>在MySQL中，直接影响索引类型的是数据库的存储引擎</p>
+<p>使用MyIsam存储引擎，数据文件和索引是分开的，索引会另外存储在另一个文件中</p>
+<p>使用InnoDB存储引擎，数据和索引都存储在同一个文件中，而且是以B+数的数据结构存储，非叶子节点存储索引，叶子节点存储索引和索引对应的数据</p>
+<p>就MyIsam引擎来说，索引中最主要的是聚簇索引，也就是主键的默认索引</p>
+<p>单值索引和多值索引，这里是指组合索引，好的组合索引可以达到覆盖索引，可以做到避免回表，这里是因为叶子节点通过覆盖索引带了数据，因为B+树只有叶子节点带有数据，非叶子节点都是索引</p>
+<p>而多个组合索引下，有效索引要做到左匹配，也就是必须从左顺序匹配到右查询，否则索引将失效</p>
+<h4 id="2-2-口述-sql"><a href="#2-2-口述-sql" class="headerlink" title="2.2 口述 sql"></a>2.2 口述 sql</h4><p>给你一张表，有三个字段，id、产品id、备注信息，现在需要你查询相同产品id的记录，然后id值相同的记录数大于等于5的产品id</p>
+<p>首先呢，我们可以先定义这张表为S</p>
+<p>因为涉及相同字段的记录，可以考虑直接分组，使用聚合函数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> pro_id <span class="keyword">from</span> S</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> pro_id</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(pro_id) <span class="operator">&gt;=</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-JVM"><a href="#3-JVM" class="headerlink" title="3. JVM"></a>3. JVM</h3><h4 id="3-1-线程的死锁了解过吗？"><a href="#3-1-线程的死锁了解过吗？" class="headerlink" title="3.1 线程的死锁了解过吗？"></a>3.1 线程的死锁了解过吗？</h4><p>比如有两个线程t1和t2，t1线程有资源r1，t2有资源r2，t1线程执行代码中需要资源r2，不过这段代码需要t2线程把资源r2释放才能执行，此时t2线程也执行代码中，释放资源前需要获取资源r1，但t2又需要r2，此时处于相互等待的状态，就导致了死锁。</p>
+<p>从Java角度来说，资源相当于Java的锁对象，是互斥的，一个线程获取锁对象后，另一个线程只能等待，t1线程获取锁对象r1，也就是占有了锁r1，这时线程t2也是占有了锁对象r2，而线程t1需要获取锁对象r2才能往下执行代码，使得线程t1阻塞，而线程t2处于阻塞等待锁对象r1释放，才能释放锁对象r2，这样就导致死锁。（互相等待）</p>
+<h3 id="4-JUC"><a href="#4-JUC" class="headerlink" title="4. JUC"></a>4. JUC</h3><h4 id="4-1-线程池有了解过吗？"><a href="#4-1-线程池有了解过吗？" class="headerlink" title="4.1 线程池有了解过吗？"></a>4.1 线程池有了解过吗？</h4><p>线程池主要有核心线程数、救急线程和队列，队列分为阻塞队列和非阻塞队列。</p>
+<p>目前线程池主要可以分为几类：</p>
+<p>只有核心线程、无救急线程的线程池，此时等待队列中有要执行的任务，而核心线程在轮询地执行等待队列中的任务，如果队列满或者队列是无界队列，可能导致内存溢出问题。</p>
+<p>一般这种线程池的做法就是使用了拒绝策略，拒绝策略可分为直接丢弃新任务、异常抛出（主动逻辑处理）、丢弃等待队列头结点、提交任务线程执行。</p>
+<p>最后一个是推荐使用的</p>
+<ul>
+<li>不会造成数据丢失，也就不会出现业务损失；</li>
+<li>提交任务的线程被占用，新的任务不可提交，减缓任务提交的速度，相当于负反馈，能给到线程池一定的缓冲期；</li>
+</ul>
+<p>只有救急线程的线程池，这种的话有线程池<code>newCachedThreadPool</code>，它能无限创建救急线程，队列采用<code>SynchronousQueue</code> ，是一个没有容量的队列，只有线程取任务时才能提交任务；</p>
+<p>最后是一种核心线程数只有1的线程池，没有救急线程，任务队列无界，一般作为单线程任务，这样就不会有CPU的轮询切换，任务的执行效率最高，不过请求数太多的情况下，也是容易导致内存溢出。</p>
+<p>非阻塞队列实现的有<code>CurrentLinkedQueue</code>，它是通过<code>CAS</code>无锁化机制的线程池队列，每个线程通过<code>for(;;)</code>执行，是一个单向且通过<code>GC</code>自动回收出队节点的，利用可达性算法分析，将<code>next</code>指向自己，即可触发延迟回收，利用元素的不可重用性，规避<code>ABA</code>问题</p>
+<h3 id="5-Linux"><a href="#5-Linux" class="headerlink" title="5. Linux"></a>5. Linux</h3><p>给你一个日志文件，要求你查询最近一天内中，匹配到关键字的所有记录数据</p>
+<p>一般日志实时查询可以使用该命令，它会实时更新，而且会处于fg模式，tail打印文件末尾记录，也就是最近</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -100f catalina.log |<span class="params"> grep &quot;关键字&quot; </span></span><br></pre></td></tr></table></figure>
+
+<p>而使用cat是查询历史，只能打印日志到屏幕</p>
+<p>比如按照<code>tail</code>或<code>head</code>来查询关键字为<code>20:</code>的后5条数据并显示行号</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -n log.log4j |<span class="params"> grep &quot;20:&quot; </span>| tail -n <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>时间段查询</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&#x27;2022-08-21 20:1[1-9]&#x27;</span> log.log4j</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://fyupeng.github.io/2022/09/29/%E5%B0%8F%E8%BF%88%E7%A7%91%E6%8A%80%E4%B8%80%E9%9D%A2/" title="小迈科技一面" target="_blank" rel="external">http://fyupeng.github.io/2022/09/29/小迈科技一面/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/fyupeng" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/fyupeng" target="_blank"><span class="text-dark">fyupeng</span><small class="ml-1x">Java 后端开发</small></a></h3>
+        <div>一名平凡的本科生，目前碌碌无为。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/10/20/SpringBoot%E6%95%B4%E5%90%88rpc-netty-framework/" title="SpringBoot整合rpc-netty-framework"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/09/25/%E5%8F%B3%E5%B2%B8%E7%89%A9%E8%81%94%E9%9D%A2%E7%BB%8F/" title="右岸物联面经"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/fyupeng" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/fyupeng" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+	
+		
+	</div>
+    <div class="copyright">
+    	
+        &copy; 2022 fyupeng
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/fyupeng" target="_blank"> fyupeng </a>base on <a href="https://github.com/fyupeng/hexo-theme-pure" target="_blank">pure</a>.
+        </div>	
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'opeaNqQSpYv8bykmFJ4WTJc6-gzGzoHsz',
+    appKey: 'LDirEIkQzN7NNzJVtPBfXxLH',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
