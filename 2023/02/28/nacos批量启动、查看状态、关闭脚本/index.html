@@ -18,15 +18,20 @@
   
   
   <title>fyupeng</title>
-  <meta property="og:type" content="website">
+  <meta name="description" content="一、直接给代码1. start.sh 使用方法1234[root@localhost] #lsnacos.&#x2F;start.sh .&#x2F;nacos -m standalone # 单机模式.&#x2F;start.sh .&#x2F;nacos -m cluster # 集群模式 代码1234567891011121314151617181920212223242526272829303132333435363738394">
+<meta property="og:type" content="article">
 <meta property="og:title" content="fyupeng">
-<meta property="og:url" content="http://fyupeng.github.io/index.html">
+<meta property="og:url" content="http://fyupeng.github.io/2023/02/28/nacos%E6%89%B9%E9%87%8F%E5%90%AF%E5%8A%A8%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E3%80%81%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC/index.html">
 <meta property="og:site_name" content="fyupeng">
+<meta property="og:description" content="一、直接给代码1. start.sh 使用方法1234[root@localhost] #lsnacos.&#x2F;start.sh .&#x2F;nacos -m standalone # 单机模式.&#x2F;start.sh .&#x2F;nacos -m cluster # 集群模式 代码1234567891011121314151617181920212223242526272829303132333435363738394">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-28T01:57:13.000Z">
+<meta property="article:modified_time" content="2023-02-28T01:57:59.366Z">
 <meta property="article:author" content="fyupeng">
+<meta property="article:tag" content="Java工具">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://fyupeng.github.io/index.html">
+  <link rel="canonical" href="http://fyupeng.github.io/2023/02/28/nacos%E6%89%B9%E9%87%8F%E5%90%AF%E5%8A%A8%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E3%80%81%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC/index.html">
   
     <link rel="alternate" href="/atom.xml" title="fyupeng" type="application/atom+xml">
   
@@ -346,37 +351,44 @@
 </aside>
 
   
-  <main class="main" role="main">
   
-  <div class="content article-list">
+<main class="main" role="main">
+  <div class="content">
+  <article id="nacos title: 批量启动、查看状态、关闭脚本-nacos批量启动、查看状态、关闭脚本" class="article article-type-nacos title: 批量启动、查看状态、关闭脚本" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-nacos title: 批量启动、查看状态、关闭脚本" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+    <div class="article-header">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="icon icon-calendar-check"></i>
 	<a href="/2023/02/28/nacos%E6%89%B9%E9%87%8F%E5%90%AF%E5%8A%A8%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E3%80%81%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC/" class="article-date">
-	  <time datetime="2023-02-28T01:57:13.000Z" itemprop="datePublished">2月 28</time>
+	  <time datetime="2023-02-28T01:57:13.000Z" itemprop="datePublished">2023-02-28</time>
 	</a>
 </span>
-    
+        
   <span class="article-category">
     <i class="icon icon-folder"></i>
     <a class="article-category-link" href="/categories/%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7/">脚本工具</a>
   </span>
 
-    
+        
   <span class="article-tag">
     <i class="icon icon-tags"></i>
 	<a class="article-tag-link-link" href="/tags/Java%E5%B7%A5%E5%85%B7/" rel="tag">Java工具</a>
   </span>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/28/nacos%E6%89%B9%E9%87%8F%E5%90%AF%E5%8A%A8%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E3%80%81%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC/#comments" class="article-comment-link">评论</a></span>
-    
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/28/nacos%E6%89%B9%E9%87%8F%E5%90%AF%E5%8A%A8%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E3%80%81%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC/#comments" class="article-comment-link">评论</a></span>
+        
 	
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 507(字)</span>
 	
@@ -384,430 +396,152 @@
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
 	
 
-  </p>
-</article>
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h1 id="一、直接给代码"><a href="#一、直接给代码" class="headerlink" title="一、直接给代码"></a>一、直接给代码</h1><h2 id="1-start-sh"><a href="#1-start-sh" class="headerlink" title="1. start.sh"></a>1. start.sh</h2><ul>
+<li><strong>使用方法</strong><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="variable">@localhost</span>] <span class="comment">#ls</span></span><br><span class="line">nacos</span><br><span class="line">./start.sh ./nacos -m standalone <span class="comment"># 单机模式</span></span><br><span class="line">./start.sh ./nacos -m cluster <span class="comment"># 集群模式</span></span><br></pre></td></tr></table></figure></li>
+<li><strong>代码</strong><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">function read_dir() &#123;</span><br><span class="line">  <span class="keyword">for</span> file <span class="keyword">in</span> <span class="string">`ls $1`</span></span><br><span class="line">  <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> [[ -d <span class="variable">$1</span><span class="string">&quot;/&quot;</span><span class="variable">$file</span> ]] &amp;&amp; [[ <span class="string">&quot;$file&quot;</span> = <span class="string">&quot;bin&quot;</span> ]];</span><br><span class="line">      <span class="keyword">then</span></span><br><span class="line">      	<span class="comment"># 递归子文件夹</span></span><br><span class="line">        read_dir <span class="variable">$1</span><span class="string">&quot;/&quot;</span><span class="variable">$file</span> <span class="variable">$2</span> <span class="variable">$3</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      <span class="keyword">if</span> [[ -f <span class="variable">$1</span><span class="string">&quot;/&quot;</span><span class="variable">$file</span> ]] &amp;&amp; [[ <span class="string">&quot;$file&quot;</span> = startup.sh ]];</span><br><span class="line">        <span class="keyword">then</span></span><br><span class="line">          cd ./<span class="variable">$1</span></span><br><span class="line">          <span class="keyword">if</span> [[ <span class="string">&quot;$2&quot;</span> = <span class="string">&quot;-m&quot;</span> ]];</span><br><span class="line">	    <span class="keyword">then</span></span><br><span class="line">	      <span class="keyword">if</span> [[ <span class="string">&quot;$3&quot;</span> = <span class="string">&quot;standalone&quot;</span> ]];</span><br><span class="line">	        <span class="keyword">then</span></span><br><span class="line">	          ./startup.sh -m standalone &gt; <span class="regexp">/dev/null</span></span><br><span class="line">	          echo <span class="variable">$1</span><span class="string">&quot;/&quot;</span><span class="variable">$file</span> 单机模式启动成功！</span><br><span class="line">		  exit <span class="number">0</span>;</span><br><span class="line">	      elif [[ <span class="string">&quot;$3&quot;</span> = <span class="string">&quot;cluster&quot;</span> ]];</span><br><span class="line">	        <span class="keyword">then</span></span><br><span class="line">	          ./startup.sh -m cluster &gt; <span class="regexp">/dev/null</span></span><br><span class="line"> 	          echo <span class="variable">$1</span><span class="string">&quot;/&quot;</span><span class="variable">$file</span> 集群模式启动成功！</span><br><span class="line">		  exit <span class="number">0</span>;</span><br><span class="line">	      <span class="keyword">else</span></span><br><span class="line">	        echo <span class="string">&quot;Usage: ./startup.sh [Directory] -m [standalone | cluster]&quot;</span></span><br><span class="line">	      fi</span><br><span class="line">	  <span class="keyword">else</span></span><br><span class="line">	    echo <span class="string">&quot;Usage: ./startup.sh [Directory] -m [standalone | cluster]&quot;</span></span><br><span class="line">	    exit -<span class="number">1</span>;</span><br><span class="line">          fi</span><br><span class="line">          cd - &gt; <span class="regexp">/dev/null</span></span><br><span class="line">      fi</span><br><span class="line">    fi</span><br><span class="line">  done</span><br><span class="line">  echo <span class="string">&quot;Usage: ./startup.sh [Directory] -m [standalone | cluster]&quot;</span></span><br><span class="line">  exit -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取三个参数</span></span><br><span class="line">read_dir <span class="variable">$1</span> <span class="variable">$2</span> $<span class="number">3</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="2-status-sh"><a href="#2-status-sh" class="headerlink" title="2. status.sh"></a>2. status.sh</h2><ul>
+<li><p><strong>使用方法</strong></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="variable">@localhost</span>] <span class="comment">#ls</span></span><br><span class="line">nacos</span><br><span class="line">./status.sh ./nacos -m standalone <span class="comment"># 单机模式</span></span><br><span class="line">./status.sh ./nacos -m cluster <span class="comment"># 集群模式</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>代码</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">target_dir=$1</span><br><span class="line"></span><br><span class="line">if [[ &quot;$target_dir&quot; = &quot;&quot; ]] || [[ ! -d $target_dir ]];</span><br><span class="line">then</span><br><span class="line">  echo &quot;Usage: ./status.sh [Dir]&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">pid=`ps ax | grep -i &#x27;nacos.nacos&#x27; | grep $&#123;target_dir&#125; | grep java | grep -v grep | awk &#x27;&#123;print $1&#125;&#x27;`</span><br><span class="line"></span><br><span class="line">if [[ -z &quot;$pid&quot; ]];</span><br><span class="line">then</span><br><span class="line">  echo &quot;No NacosServer running.&quot;</span><br><span class="line"> exit -1;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">echo &quot;The nacosServer $1&quot;nacos-server.jar&quot;  is running, it&#x27;s pid is $pid&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="3-stop-sh"><a href="#3-stop-sh" class="headerlink" title="3.stop.sh"></a>3.stop.sh</h2></li>
+<li><p><strong>使用方法</strong></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="variable">@localhost</span>] <span class="comment">#ls</span></span><br><span class="line">nacos</span><br><span class="line">./status.sh ./nacos -m standalone <span class="comment"># 单机模式</span></span><br><span class="line">./status.sh ./nacos -m cluster <span class="comment"># 集群模式</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>代码</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">target_dir=$1</span><br><span class="line"></span><br><span class="line">pid=`ps ax | grep -i &#x27;nacos.nacos&#x27; | grep $&#123;target_dir&#125; | grep java | grep -v grep | awk &#x27;&#123;print $1&#125;&#x27;`</span><br><span class="line">if [ -z &quot;$pid&quot; ] ; then</span><br><span class="line">        echo &quot;No nacosServer running.&quot;</span><br><span class="line">        exit -1;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">echo &quot;The nacosServer $1&quot;nacos-server.jar&quot;  is running, it&#x27;s pid is $pid&quot;</span><br><span class="line"></span><br><span class="line">kill $&#123;pid&#125;</span><br><span class="line"></span><br><span class="line">echo &quot;Send shutdown request to nacosServer($&#123;pid&#125;) OK&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="二、结束语"><a href="#二、结束语" class="headerlink" title="二、结束语"></a>二、结束语</h1><p>评论区可留言，可私信，可互相交流学习，共同进步，欢迎各位给出意见或评价，本人致力于做到优质文章，希望能有幸拜读各位的建议！</p>
+<blockquote>
+<p>专注品质，热爱生活。<br>交流技术，寻求同志。</p>
+</blockquote>
 
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://fyupeng.github.io/2023/02/28/nacos%E6%89%B9%E9%87%8F%E5%90%AF%E5%8A%A8%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E3%80%81%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC/" title="" target="_blank" rel="external">http://fyupeng.github.io/2023/02/28/nacos批量启动、查看状态、关闭脚本/</a>
+    </li>
     
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/02/01/vue%E4%B8%80%E9%94%AE%E5%90%AF%E5%8A%A8%E3%80%81%E5%81%9C%E6%AD%A2%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/">vue一键启动、停止、查看状态实用工具</a>
-    </h1>
-  
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
 
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/fyupeng" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/fyupeng" target="_blank"><span class="text-dark">fyupeng</span><small class="ml-1x">Java 后端开发</small></a></h3>
+        <div>一名平凡的本科生，目前碌碌无为。</div>
+      </div>
+    </figure>
   </div>
+</div>
+
+
+    </div>
+  </article>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2023/02/01/vue%E4%B8%80%E9%94%AE%E5%90%AF%E5%8A%A8%E3%80%81%E5%81%9C%E6%AD%A2%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" class="article-date">
-	  <time datetime="2023-02-01T04:07:59.000Z" itemprop="datePublished">2月 1</time>
-	</a>
-</span>
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7/">脚本工具</a>
-  </span>
-
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
     
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/Java%E5%B7%A5%E5%85%B7/" rel="tag">Java工具</a>
-  </span>
+  </section>
 
 
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/01/vue%E4%B8%80%E9%94%AE%E5%90%AF%E5%8A%A8%E3%80%81%E5%81%9C%E6%AD%A2%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 338(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/02/01/jar%E5%8C%85%E6%89%B9%E9%87%8F%E5%90%AF%E5%8A%A8%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E3%80%81%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC/">jar包批量启动、查看状态、关闭脚本</a>
-    </h1>
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
   
-
-  </div>
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2023/02/01/vue%E4%B8%80%E9%94%AE%E5%90%AF%E5%8A%A8%E3%80%81%E5%81%9C%E6%AD%A2%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/" title="vue一键启动、停止、查看状态实用工具"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2023/02/01/jar%E5%8C%85%E6%89%B9%E9%87%8F%E5%90%AF%E5%8A%A8%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E3%80%81%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC/" class="article-date">
-	  <time datetime="2023-02-01T03:55:30.000Z" itemprop="datePublished">2月 1</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7/">脚本工具</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/Java%E5%B7%A5%E5%85%B7/" rel="tag">Java工具</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/01/jar%E5%8C%85%E6%89%B9%E9%87%8F%E5%90%AF%E5%8A%A8%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E3%80%81%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 717(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/02/01/%E5%AE%95%E6%9C%BA%E6%A3%80%E6%B5%8B%E3%80%81%E9%87%8D%E5%90%AF%E3%80%81%E5%91%8A%E8%AD%A6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">宕机检测、重启、告警开发工具</a>
-    </h1>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
   
-
-  </div>
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2023/02/01/%E5%AE%95%E6%9C%BA%E6%A3%80%E6%B5%8B%E3%80%81%E9%87%8D%E5%90%AF%E3%80%81%E5%91%8A%E8%AD%A6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="article-date">
-	  <time datetime="2023-02-01T03:55:08.000Z" itemprop="datePublished">2月 1</time>
-	</a>
-</span>
+  <div class="bar-right">
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7/">脚本工具</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/Java%E8%84%9A%E6%9C%AC/" rel="tag">Java脚本</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/01/%E5%AE%95%E6%9C%BA%E6%A3%80%E6%B5%8B%E3%80%81%E9%87%8D%E5%90%AF%E3%80%81%E5%91%8A%E8%AD%A6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 778(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/01/09/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/">TCP三次握手和四次挥手</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2023/01/09/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/" class="article-date">
-	  <time datetime="2023-01-09T09:43:24.000Z" itemprop="datePublished">1月 9</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%9D%A2%E7%BB%8F/" rel="tag">计算机网络面经</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/01/09/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1k(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/12/06/%E7%89%9B%E5%AE%A2%E5%BF%85%E4%BC%9ASQL/">牛客必会SQL</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/12/06/%E7%89%9B%E5%AE%A2%E5%BF%85%E4%BC%9ASQL/" class="article-date">
-	  <time datetime="2022-12-06T01:17:59.000Z" itemprop="datePublished">12月 6</time>
-	</a>
-</span>
-    
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/SQL%E5%9F%BA%E7%A1%80/" rel="tag">SQL基础</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/12/06/%E7%89%9B%E5%AE%A2%E5%BF%85%E4%BC%9ASQL/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.9k(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 14(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/11/29/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/">腾讯一面</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/11/29/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/" class="article-date">
-	  <time datetime="2022-11-29T13:08:12.000Z" itemprop="datePublished">11月 29</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/Java%E9%9D%A2%E7%BB%8F/" rel="tag">Java面经</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/11/29/%E8%85%BE%E8%AE%AF%E4%B8%80%E9%9D%A2/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 6.4k(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 22(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/10/20/SpringBoot%E6%95%B4%E5%90%88rpc-netty-framework/">SpringBoot整合rpc-netty-framework</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/10/20/SpringBoot%E6%95%B4%E5%90%88rpc-netty-framework/" class="article-date">
-	  <time datetime="2022-10-20T09:15:08.000Z" itemprop="datePublished">10月 20</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/Java%E7%AC%94%E8%AE%B0/">Java笔记</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/RPC/" rel="tag">RPC</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/10/20/SpringBoot%E6%95%B4%E5%90%88rpc-netty-framework/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.8k(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/29/%E5%B0%8F%E8%BF%88%E7%A7%91%E6%8A%80%E4%B8%80%E9%9D%A2/">小迈科技一面</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/09/29/%E5%B0%8F%E8%BF%88%E7%A7%91%E6%8A%80%E4%B8%80%E9%9D%A2/" class="article-date">
-	  <time datetime="2022-09-29T08:00:20.000Z" itemprop="datePublished">9月 29</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/Java%E9%9D%A2%E7%BB%8F/" rel="tag">Java面经</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/29/%E5%B0%8F%E8%BF%88%E7%A7%91%E6%8A%80%E4%B8%80%E9%9D%A2/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.5k(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 9(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/25/%E5%8F%B3%E5%B2%B8%E7%89%A9%E8%81%94%E9%9D%A2%E7%BB%8F/">右岸物联面经</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2022/09/25/%E5%8F%B3%E5%B2%B8%E7%89%A9%E8%81%94%E9%9D%A2%E7%BB%8F/" class="article-date">
-	  <time datetime="2022-09-25T10:28:50.000Z" itemprop="datePublished">9月 25</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E9%9D%A2%E7%BB%8F/">面经</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/Java%E9%9D%A2%E7%BB%8F/" rel="tag">Java面经</a>
-  </span>
-
-
-    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/25/%E5%8F%B3%E5%B2%B8%E7%89%A9%E8%81%94%E9%9D%A2%E7%BB%8F/#comments" class="article-comment-link">评论</a></span>
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 1.6k(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 5(分)</span>
-	
-
-  </p>
-</article>
-
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
     
   </div>
-
+  </div>
+</nav>
   
-    
-    <nav class="bar bar-footer clearfix" data-stick-bottom>
-        <div class="bar-inner">
-        <ul class="pager pull-left">
-            
-            <li class="prev disabled">
-                <a href="javascript:;">
-                    <i class="icon icon-angle-left"></i>
-                    上一页
-                </a>
-            </li>
-            
-            
-            <li class="next">
-                <a href="/page/2/">
-                    下一页
-                    <i class="icon icon-angle-right"></i>
-                </a>
-            </li>
-            
-        </ul>
-            <div class="total-article bar-right">Page 1 of 4</div>
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.jpg" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
-    
- 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -874,6 +608,33 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'opeaNqQSpYv8bykmFJ4WTJc6-gzGzoHsz',
+    appKey: 'LDirEIkQzN7NNzJVtPBfXxLH',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
