@@ -17,18 +17,23 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>This is my game title | fyupeng</title>
-  <meta name="description" content="This is my game quote         .hexo-douban-tabs {     margin-bottom: 15px;     margin-top: 15px; }  .hexo-douban-tab {     padding: 5px;     text-decoration: none !important; }  .hexo-douban-tab-">
-<meta property="og:type" content="website">
-<meta property="og:title" content="This is my game title">
-<meta property="og:url" content="http://fyupeng.github.io/games/index.html">
+  <title>宕机检测、重启、告警开发工具 | fyupeng</title>
+  <meta name="description" content="一、直接给代码1. keepalived.conf安装详见 keepalived安装教程配置前请备份好原文件，新建文件夹&#x2F;etc&#x2F;keepalived并将副本keepalived.conf复制到&#x2F;etc&#x2F;keepalived即可。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宕机检测、重启、告警开发工具">
+<meta property="og:url" content="http://fyupeng.github.io/2023/02/01/%E5%AE%95%E6%9C%BA%E6%A3%80%E6%B5%8B%E3%80%81%E9%87%8D%E5%90%AF%E3%80%81%E5%91%8A%E8%AD%A6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/index.html">
 <meta property="og:site_name" content="fyupeng">
-<meta property="og:description" content="This is my game quote         .hexo-douban-tabs {     margin-bottom: 15px;     margin-top: 15px; }  .hexo-douban-tab {     padding: 5px;     text-decoration: none !important; }  .hexo-douban-tab-">
+<meta property="og:description" content="一、直接给代码1. keepalived.conf安装详见 keepalived安装教程配置前请备份好原文件，新建文件夹&#x2F;etc&#x2F;keepalived并将副本keepalived.conf复制到&#x2F;etc&#x2F;keepalived即可。 12345678910111213141516171819202122232425262728293031323334353637383940414243444546!">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6fbb9cffe08d44809353e14dd19e2f21.png">
+<meta property="article:published_time" content="2023-02-01T03:55:08.000Z">
+<meta property="article:modified_time" content="2023-02-01T03:57:29.585Z">
 <meta property="article:author" content="fyupeng">
+<meta property="article:tag" content="Java脚本">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/6fbb9cffe08d44809353e14dd19e2f21.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://fyupeng.github.io/games/index.html">
+  <link rel="canonical" href="http://fyupeng.github.io/2023/02/01/%E5%AE%95%E6%9C%BA%E6%A3%80%E6%B5%8B%E3%80%81%E9%87%8D%E5%90%AF%E3%80%81%E5%91%8A%E8%AD%A6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/index.html">
   
     <link rel="alternate" href="/atom.xml" title="fyupeng" type="application/atom+xml">
   
@@ -349,16 +354,25 @@
 
   
   
+  <aside class="sidebar sidebar-toc collapse   in  " id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">文章目录</h3>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%9B%B4%E6%8E%A5%E7%BB%99%E4%BB%A3%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">一、直接给代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-keepalived-conf"><span class="toc-number">1.1.</span> <span class="toc-text">1. keepalived.conf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-notify-sh"><span class="toc-number">1.2.</span> <span class="toc-text">2. notify.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-nginx-check-sh"><span class="toc-number">1.3.</span> <span class="toc-text">3.nginx_check.sh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-mail-rc"><span class="toc-number">1.4.</span> <span class="toc-text">4.mail.rc</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%88%E6%9E%9C%E5%B1%95%E7%A4%BA"><span class="toc-number">2.</span> <span class="toc-text">二、效果展示</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-number">3.</span> <span class="toc-text">三、结束语</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
 <main class="main" role="main">
   <div class="content">
-  <article id="-games" class="article article-type-" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-宕机检测、重启、告警开发工具" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      This is my game title
+      宕机检测、重启、告警开发工具
     </h1>
   
 
@@ -366,12 +380,22 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/games/index.html" class="article-date">
-	  <time datetime="2025-04-27T09:15:41.804Z" itemprop="datePublished">2025-04-27</time>
+	<a href="/2023/02/01/%E5%AE%95%E6%9C%BA%E6%A3%80%E6%B5%8B%E3%80%81%E9%87%8D%E5%90%AF%E3%80%81%E5%91%8A%E8%AD%A6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="article-date">
+	  <time datetime="2023-02-01T03:55:08.000Z" itemprop="datePublished">2023-02-01</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%84%9A%E6%9C%AC%E5%B7%A5%E5%85%B7/">脚本工具</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/Java%E8%84%9A%E6%9C%AC/" rel="tag">Java脚本</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -382,10 +406,10 @@
 	</span>
 
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/games/index.html#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/02/01/%E5%AE%95%E6%9C%BA%E6%A3%80%E6%B5%8B%E3%80%81%E9%87%8D%E5%90%AF%E3%80%81%E5%91%8A%E8%AD%A6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 570(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 778(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 3(分)</span>
@@ -395,252 +419,50 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <blockquote>
-    <p>This is my game quote</p>
+        <h1 id="一、直接给代码"><a href="#一、直接给代码" class="headerlink" title="一、直接给代码"></a>一、直接给代码</h1><h2 id="1-keepalived-conf"><a href="#1-keepalived-conf" class="headerlink" title="1. keepalived.conf"></a>1. keepalived.conf</h2><p>安装详见 <a target="_blank" rel="noopener" href="https://blog.csdn.net/F15217283411/article/details/120801130">keepalived安装教程</a><br>配置前请备份好原文件，新建文件夹<code>/etc/keepalived</code>并将副本<code>keepalived.conf</code>复制到<code>/etc/keepalived</code>即可。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">!Configuration File <span class="keyword">for</span> keepalived</span><br><span class="line">global_defs &#123;</span><br><span class="line">        router_id master</span><br><span class="line">        notification_email &#123;</span><br><span class="line">          ******<span class="variable">@163</span>.com  </span><br><span class="line">        &#125;</span><br><span class="line">        notification_email_from ******<span class="variable">@126</span>.com</span><br><span class="line">        smtp_server <span class="number">127.0</span>.<span class="number">0.1</span></span><br><span class="line">        smtp_connect_timeout <span class="number">30</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">vrrp_script chk_http_port &#123;</span><br><span class="line">        <span class="comment"># 脚本检测工具，见 3.nginx_check.sh</span></span><br><span class="line">        script <span class="string">&quot;/usr/local/src/nginx_check.sh&quot;</span></span><br><span class="line">        interval <span class="number">2</span> <span class="comment">#（检测脚本执行的间隔）</span></span><br><span class="line">        weight -<span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">vrrp_instance <span class="variable constant_">VI_1</span> &#123;</span><br><span class="line">        state <span class="variable constant_">MASTER</span> <span class="comment"># 备份服务器上将 MASTER 改为 BACKUP</span></span><br><span class="line">        <span class="comment">## 具体网卡请 键入命令 ip a 查看有哪些来进行配置</span></span><br><span class="line">        interface eth0 /<span class="regexp">/网卡</span></span><br><span class="line"><span class="regexp">        virtual_router_id 1 # 主、备机的 virtual_router_id 必须相同</span></span><br><span class="line"><span class="regexp">        priority 100 # 主、备机取不同的优先级，主机值较大，备份机值较小</span></span><br><span class="line"><span class="regexp">        advert_int 1</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        authentication &#123;</span></span><br><span class="line"><span class="regexp">                auth_type PASS</span></span><br><span class="line"><span class="regexp">                auth_pass root123</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        track_script&#123; # 这里调用检测脚本执行，一秒检测一次</span></span><br><span class="line"><span class="regexp">               chk_http_port</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        # 根据 内网子网 设置虚拟地址，用于转发，keepalived集群不在此章节</span></span><br><span class="line"><span class="regexp">        virtual_ipaddress &#123;</span></span><br><span class="line"><span class="regexp">                192.168.0.100/</span><span class="number">24</span> dev eth0 label <span class="symbol">eth0:</span><span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#配置keepalived发生故障转移时，触发执行的脚本</span></span><br><span class="line">        notify_master <span class="string">&quot;/etc/keepalived/notify.sh master &quot;</span></span><br><span class="line">        notify_backup <span class="string">&quot;/etc/keepalived/notify.sh backup &quot;</span></span><br><span class="line">        notify_fault  <span class="string">&quot;/etc/keepalived/notify.sh fault &quot;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-notify-sh"><a href="#2-notify-sh" class="headerlink" title="2. notify.sh"></a>2. notify.sh</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line"><span class="comment">#接收者邮箱，多个以空格分隔</span></span><br><span class="line">contact=(******<span class="variable">@163</span>.com ******<span class="variable">@qq</span>.com)</span><br><span class="line"><span class="comment">#本机ip</span></span><br><span class="line"><span class="variable constant_">HOST_IP</span>=<span class="number">192.168</span>.<span class="number">0.100</span>/<span class="number">24</span></span><br><span class="line">notify() &#123;</span><br><span class="line"><span class="comment">#邮件主题</span></span><br><span class="line">    mailsubject=<span class="string">&quot;vip转移,$HOST_IP keepalived to be $1&quot;</span></span><br><span class="line">    <span class="comment">#邮件正文</span></span><br><span class="line">    mailbody=<span class="string">&quot;$(date +&#x27;%F %T&#x27;): 节点切换, $HOST_IP keepalived changed to be $1&quot;</span></span><br><span class="line">    <span class="keyword">for</span> receiver <span class="keyword">in</span> <span class="variable">$&#123;</span>contact[*]&#125;</span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">        <span class="comment">#发送邮件</span></span><br><span class="line">        echo <span class="string">&quot;$mailbody&quot;</span> |<span class="params"> mail -s &quot;$mailsubject&quot; $receiver</span></span><br><span class="line"><span class="params">    done</span></span><br><span class="line"><span class="params">&#125;</span></span><br><span class="line"><span class="params"><span class="keyword">case</span> $1 <span class="keyword">in</span></span></span><br><span class="line"><span class="params">master)</span></span><br><span class="line"><span class="params">    notify master</span></span><br><span class="line"><span class="params">    ;;</span></span><br><span class="line"><span class="params">backup)</span></span><br><span class="line"><span class="params">    notify backup</span></span><br><span class="line"><span class="params">    ;;</span></span><br><span class="line"><span class="params">fault)</span></span><br><span class="line"><span class="params">    notify fault</span></span><br><span class="line"><span class="params">    ;;</span></span><br><span class="line"><span class="params">*)</span></span><br><span class="line"><span class="params">    echo &quot;Usage:&#123;master</span>|backup|<span class="params">fault&#125;&quot;</span></span><br><span class="line"><span class="params">    exit 1</span></span><br><span class="line"><span class="params">    ;;</span></span><br><span class="line"><span class="params">esac</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-nginx-check-sh"><a href="#3-nginx-check-sh" class="headerlink" title="3.nginx_check.sh"></a>3.nginx_check.sh</h2><p>以<code>nginx</code>为例，脚本用于宕机检测和重启</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env bash</span></span><br><span class="line">echo <span class="string">&#x27; a&#x27;</span></span><br><span class="line">A=<span class="string">`ps -C nginx --no-header |wc -l`</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$A</span> -eq <span class="number">0</span> ];<span class="keyword">then</span></span><br><span class="line">        <span class="comment"># 开启nginx服务</span></span><br><span class="line">        /usr/local/nginx/sbin/nginx</span><br><span class="line">        sleep <span class="number">1</span></span><br><span class="line">        <span class="comment"># nginx没有启动成功</span></span><br><span class="line">        <span class="keyword">if</span> [ <span class="string">`ps -C nginx --no-header |wc -l`</span> -eq <span class="number">0</span> ];<span class="keyword">then</span></span><br><span class="line">                <span class="comment"># 杀死keepalived进程</span></span><br><span class="line">                killall keepalived</span><br><span class="line">        fi</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<h2 id="4-mail-rc"><a href="#4-mail-rc" class="headerlink" title="4.mail.rc"></a>4.mail.rc</h2><p>告警邮件发送配置，需要安装相关依赖</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mailx</span><br></pre></td></tr></table></figure>
+<p>配置<code>/etc/mail.rc</code></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This is the configuration file for Heirloom mailx (formerly</span></span><br><span class="line"><span class="comment"># known under the name &quot;nail&quot;.</span></span><br><span class="line"><span class="comment"># See mailx(1) for further options.</span></span><br><span class="line"><span class="comment"># This file is not overwritten when &#x27;make install&#x27; is run in</span></span><br><span class="line"><span class="comment"># the mailx build process again.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Sccsid @(#)nail.rc	2.11 (gritter) 8/2/08</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Do not forward to mbox by default since this is likely to be</span></span><br><span class="line"><span class="comment"># irritating for most users today.</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 末尾追加6行配置即可</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#发送邮件的邮箱</span></span><br><span class="line">set from=******<span class="variable">@126</span>.com</span><br><span class="line"><span class="comment">#smtp邮件服务器</span></span><br><span class="line">set smtp=smtp.<span class="number">126</span>.com</span><br><span class="line"><span class="comment">#发送邮件的邮箱用户</span></span><br><span class="line">set smtp-auth-user=******<span class="variable">@126</span>.com</span><br><span class="line"><span class="comment">#邮箱授权码</span></span><br><span class="line">set smtp-auth-password=******</span><br><span class="line">set smtp-auth=login</span><br><span class="line">set ssl-verify=ignore</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="二、效果展示"><a href="#二、效果展示" class="headerlink" title="二、效果展示"></a>二、效果展示</h1><blockquote>
+<p><code>keepalived</code> 服务</p>
 </blockquote>
-
-<style>
-    
-.hexo-douban-tabs {
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
-
-.hexo-douban-tab {
-    padding: 5px;
-    text-decoration: none !important;
-}
-
-.hexo-douban-tab-active {
-    background: #657b83;
-    color: #fff !important;
-}
-
-.hexo-douban-item {
-    position: relative;
-    clear: both;
-    min-height: 170px;
-    padding: 10px 0;
-    border-bottom: 1px #ddd solid;
-}
-
-@media screen and (max-width: 600px) {
-    .hexo-douban-item {
-        width: 100%;
-    }
-}
-
-.hexo-douban-picture {
-    position: absolute;
-    left: 0;
-    top: 10px;
-    width: 100px;
-}
-
-.hexo-douban-info {
-    padding-left: 120px;
-}
-
-.hexo-douban-meta {
-    overflow: hidden;
-    display: -webkit-box;
-    font-size: 12px;
-    line-height: 16px;
-    padding-right: 10px;
-    margin-top: 5px;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4
-}
-
-.hexo-douban-rating {
-    overflow: hidden;
-    display: -webkit-box;
-    font-size: 12px;
-    padding-right: 10px;
-    margin-top: 8px;
-}
-
-.hexo-douban-comment {
-    font-size: 12px;
-}
-
-.hexo-douban-pagination {
-    margin-top: 15px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.hexo-douban-button {
-    padding: 5px;
-    text-decoration: none !important;
-}
-
-.hexo-douban-button:hover {
-    background: #657b83;
-    color: #fff !important;
-    opacity: 1;
-}
-</style>
-
-<div class="hexo-douban-tabs">
-    <a class="hexo-douban-tab hexo-douban-tab-do" href="javascript:;"
-       rel="external">
-        在玩
-        (0)</a>
-    <a class="hexo-douban-tab hexo-douban-tab-wish" href="javascript:;"
-       rel="external">
-        想玩
-        (0)</a>
-    <a class="hexo-douban-tab hexo-douban-tab-collect" href="javascript:;"
-       rel="external">
-        已玩
-        (0)</a>
-</div>
-<div class="hexo-douban-items">
-</div>
-
-<div class="hexo-douban-pagination">
-    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
-    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
-    <span class="hexo-douban-pagenum">1 / 1</span>
-    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
-    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
-</div>
-
-<script>
-    (function () {
-        let data = {
-            wish: [],
-            do: [],
-            collect: []
-        }
-
-        let nav = {
-            page: 0,
-            pageMax: 1,
-            action: 'collect'
-        }
-
-        let meta_max_line = 4;
-        let item_per_page = 10;
-
-        // ======== index ========
-
-        function tabClick(node, action) {
-            for (let childNode of node.parentNode.children) {
-                if (childNode.classList.contains('hexo-douban-tab-' + action)) {
-                    childNode.classList.add('hexo-douban-tab-active');
-                } else {
-                    childNode.classList.remove('hexo-douban-tab-active');
-                }
-            }
-
-            renderList(action, 1)
-        }
-
-
-        // ======== pagination ========
-        (function initPagination() {
-            let firstpage = document.querySelector(".hexo-douban-firstpage");
-            let previouspage = document.querySelector(".hexo-douban-previouspage");
-            let nextpage = document.querySelector(".hexo-douban-nextpage");
-            let lastpage = document.querySelector(".hexo-douban-lastpage");
-
-            //add listener
-            firstpage.onclick = () => renderList(nav.action, 1);
-            previouspage.onclick = () => renderList(nav.action, Math.max(1, nav.page - 1));
-            nextpage.onclick = () => renderList(nav.action, Math.min(nav.page + 1, nav.pageMax));
-            lastpage.onclick = () => renderList(nav.action, nav.pageMax);
-        })();
-
-
-        // ======== init index ========
-
-        (function initIndex() {
-            let tabDo = document.querySelector(".hexo-douban-tab-do");
-            tabDo.onclick = () => tabClick(tabDo, 'do');
-
-            let tabWish = document.querySelector(".hexo-douban-tab-wish");
-            tabWish.onclick = () => tabClick(tabWish, 'wish');
-
-            let tabCollect = document.querySelector(".hexo-douban-tab-collect");
-            tabCollect.onclick = () => tabClick(tabCollect, 'collect');
-
-            tabCollect.click();
-        })();
-
-        // ======== render ========
-        function renderList(action, page) {
-            if (action === nav.action && page === nav.page) {
-                return
-            }
-            nav.page = page
-            nav.pageMax = Math.max(1, Math.floor((data[action].length - 1) / item_per_page) + 1)
-            nav.action = action
-
-            document.querySelector('.hexo-douban-pagenum').textContent = `${nav.page} / ${nav.pageMax}`
-
-            let container = document.querySelector('.hexo-douban-items')
-            container.innerHTML = ''
-            for (let i = (page - 1) * item_per_page; i < Math.min(page * item_per_page, data[action].length); i++) {
-                container.append(renderItem(action, data[action][i]))
-            }
-        }
-
-        function renderItem(action, data) {
-            let item = document.createElement('div')
-            item.className = 'hexo-douban-item'
-
-            let picture = document.createElement('div')
-            picture.className = 'hexo-douban-picture'
-
-            let img = document.createElement('img')
-            img.src = data.image
-            img.loading = 'lazy'
-            img.referrerPolicy = 'no-referrer'
-            picture.append(img)
-
-            let info = document.createElement('div')
-            info.className = 'hexo-douban-info'
-
-            let title = document.createElement('div')
-            title.className = 'hexo-douban-title'
-
-            let link = document.createElement('a')
-            link.href = data.alt
-            link.target = '_blank'
-            link.textContent = data.title
-            title.append(link)
-
-            let meta = document.createElement('div')
-            meta.className = 'hexo-douban-meta'
-            meta.textContent = data.meta
-            meta.setAttribute('style', `-webkit-line-clamp: ${meta_max_line}`);
-
-            let rating = document.createElement('div')
-            rating.className = 'hexo-douban-rating'
-            rating.textContent = data.rating
-
-            let comment = document.createElement('div')
-            comment.className = 'hexo-douban-comment'
-            comment.textContent = data.comment
-
-            info.append(title, meta, rating, comment)
-
-            item.append(picture, info)
-            return item
-        }
-
-    })();
-
-</script>
-
+<ul>
+<li>启动<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start keepalived</span><br></pre></td></tr></table></figure></li>
+<li>查看状态<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status keepalived</span><br></pre></td></tr></table></figure></li>
+<li>关闭<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop keepalived</span><br></pre></td></tr></table></figure></li>
+<li>重启<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart keepalived</span><br></pre></td></tr></table></figure>
+手动关闭<code>nginx</code>服务，<code>keepalived</code>自动检测并重启<blockquote>
+<p>注意</p>
+</blockquote>
+</li>
+</ul>
+<p>检测周期必须大于<code>notify.sh</code>脚本睡眠时间。</p>
+<blockquote>
+<p>告警邮件</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/6fbb9cffe08d44809353e14dd19e2f21.png" alt="在这里插入图片描述"></p>
+<h1 id="三、结束语"><a href="#三、结束语" class="headerlink" title="三、结束语"></a>三、结束语</h1><p>评论区可留言，可私信，可互相交流学习，共同进步，欢迎各位给出意见或评价，本人致力于做到优质文章，希望能有幸拜读各位的建议！</p>
+<blockquote>
+<p>专注品质，热爱生活。<br>交流技术，寻求同志。</p>
+</blockquote>
 
       
     </div>
     <div class="article-footer">
       <blockquote class="mt-2x">
   <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://fyupeng.github.io/2023/02/01/%E5%AE%95%E6%9C%BA%E6%A3%80%E6%B5%8B%E3%80%81%E9%87%8D%E5%90%AF%E3%80%81%E5%91%8A%E8%AD%A6%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" title="宕机检测、重启、告警开发工具" target="_blank" rel="external">http://fyupeng.github.io/2023/02/01/宕机检测、重启、告警开发工具/</a>
+    </li>
     
     <li class="post-copyright-license">
       <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
@@ -670,12 +492,40 @@
   </article>
   
     
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
 
   
 </div>
 
   <nav class="bar bar-footer clearfix" data-stick-bottom>
   <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2023/02/01/jar%E5%8C%85%E6%89%B9%E9%87%8F%E5%90%AF%E5%8A%A8%E3%80%81%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81%E3%80%81%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC/" title="jar包批量启动、查看状态、关闭脚本"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2023/01/09/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%92%8C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/" title="TCP三次握手和四次挥手"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn " data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="文章目录" role="button">    <span>[&nbsp;</span><span>文章目录</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
   
   
   <!-- Button trigger modal -->
@@ -797,6 +647,39 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: 'opeaNqQSpYv8bykmFJ4WTJc6-gzGzoHsz',
+    appKey: 'LDirEIkQzN7NNzJVtPBfXxLH',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
