@@ -421,6 +421,13 @@
   </url>
   
   <url>
+    <loc>http://fyupeng.github.io/tags/jvm/</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://fyupeng.github.io/tags/MongoDB/</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
@@ -463,7 +470,7 @@
   </url>
   
   <url>
-    <loc>http://fyupeng.github.io/tags/jvm/</loc>
+    <loc>http://fyupeng.github.io/tags/juc/</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -492,13 +499,6 @@
   
   <url>
     <loc>http://fyupeng.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E3%80%81Redis/</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://fyupeng.github.io/tags/juc/</loc>
     <lastmod>2026-03-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
